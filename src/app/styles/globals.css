@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer utilities {
+
+  .title-gradient-custom {
+    background-image: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .title-gradient-hero {
+    background-image: var(--gradient-title);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .title-gradient-custom:hover {
+    background-image: var(--gradient-title-hover);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-custom {
+    background-image: var(--gradient-paragraph);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: var(--font-paragraph-size)-6;
+  }
+  .text-gradient-hero {
+    background-image: var(--gradient-paragraph);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-dropdown {
+    background-image: url('/images/background-pattern.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color-dark-green);
+  }
+
+  .bg-hero {
+    background-image: url('/images/hero-background.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color-dark-green);
+  }
+}
+
+:root {
+  --background: #202B30;
+  --foreground: #DCDCDC;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+    /* Gradient */
+    --gradient-paragraph: linear-gradient(to top, #DCDCDC 0%, white 100%);
+    --gradient-solid: linear-gradient(to bottom, rgba(167, 233, 127, 0) 0%, #465042 100%);
+    --gradient-title: linear-gradient(to bottom, #FFFFFF 0%, #f6fff0 55%, #d2fabb 100%);
+    --gradient-title-hover: linear-gradient(to bottom, #A7E97F 0%, #A7E97F 55%, #6ead46 100%);
+  
+    /* Typography */
+    --font-paragraph-size: 20px;
+    --font-paragraph-line: 30px;
+  
+    --font-title-size: 72px;
+    --font-title-line: 89px;
+}
+
+@theme {
+  --color-primary: #A7E97F;
+  --color-neutral: #DCDCDC;
+  --color-solid: #454F41;
+  --color-dark-green: #202B30;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #202B30;
+    --foreground: #DCDCDC;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
