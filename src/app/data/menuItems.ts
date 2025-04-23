@@ -2,16 +2,16 @@ import { CircuitBoard, ArrowLeftRight, Webhook, CreditCard, Users, Rss, LifeBuoy
 
 export interface SubMenuItem {
   id: string;
-  title: string;
+  titleKey: string;
   href: string;
-  description?: string;
+  descriptionKey?: string;
   icon?: React.ElementType;
   image?: string;
 }
 
 export interface MenuItem {
   id: string;
-  title: string;
+  titleKey: string;
   href: string;
   hasDropdown?: boolean;
   subItems?: SubMenuItem[];
@@ -20,82 +20,86 @@ export interface MenuItem {
 export const menuItems: MenuItem[] = [
   {
     id: "products",
-    title: "Products",
+    titleKey: "products.title",
     href: "/products",
     hasDropdown: true,
     subItems: [
       {
         id: "product-1",
-        title: "Processadora de Cartões",
+        titleKey: "products.items.cardProcessor.title",
         href: "/products/product-1",
-        description: "Soluções de pagamento tecnológicas",
-        icon: CircuitBoard
+        descriptionKey: "products.items.cardProcessor.description",
+        icon: CircuitBoard,
+        image: "/images/operation-system.png"
       },
       {
         id: "product-2",
-        title: "Gateway de Pagamento",
+        titleKey: "products.items.paymentGateway.title",
         href: "/products/product-2",
-        description: "Transações em tempo real",
-        icon: ArrowLeftRight
+        descriptionKey: "products.items.paymentGateway.description",
+        icon: ArrowLeftRight,
+        image: "/images/solutions/paymentGateway.jpg"
       },
       {
         id: "product-3",
-        title: "APIs e TOS",
+        titleKey: "products.items.apis.title",
         href: "/products/product-3",
-        description: "Integrações da plataforma",
-        icon: Webhook
+        descriptionKey: "products.items.apis.description",
+        icon: Webhook,
+        image: "/images/solutions/apis.jpg"
       },
       {
         id: "product-4",
-        title: "BIN Sponsor & Emissão de Cartões ",
+        titleKey: "products.items.binSponsor.title",
         href: "/products/product-3",
-        description: "Solução completa para emissão de cartões de crédito, débito, múltiplo e pré-pago",
-        icon: CreditCard
+        descriptionKey: "products.items.binSponsor.description",
+        icon: CreditCard,
+        image: "/images/solutions/binSponsor.jpg"
       },
     ]
   },
   {
     id: "company",
-    title: "Company",
+    titleKey: "company.title",
     href: "/company"
   },
   {
     id: "resources",
-    title: "Resources",
+    titleKey: "resources.title",
     href: "/resources",
     hasDropdown: true,
     subItems: [
       {
         id: "resource-1",
-        title: "Sobre nós",
+        titleKey: "resources.items.aboutUs.title",
         href: "/resources/resource-1",
-        description: "Conheça a Tamborine",
+        descriptionKey: "resources.items.aboutUs.description",
         icon: Users
       },
       {
         id: "resource-2",
-        title: "Blog",
+        titleKey: "resources.items.blog.title",
         href: "/resources/resource-2",
-        description: "Notícias e Artigos",
+        descriptionKey: "resources.items.blog.description",
         icon: Rss
       },
       {
         id: "resource-3",
-        title: "Help Center",
+        titleKey: "resources.items.helpCenter.title",
         href: "/resources/resource-3",
-        description: "Central de Ajuda",
+        descriptionKey: "resources.items.helpCenter.description",
         icon: LifeBuoy
       }
     ]
   },
   {
     id: "blog",
-    title: "Blog",
+    titleKey: "blog.title",
     href: "/blog"
   },
   {
     id: "help",
-    title: "Help",
+    titleKey: "help.title",
     href: "/help"
   }
 ];

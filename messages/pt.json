@@ -1,0 +1,240 @@
+{
+  "menu": {
+    "products": {
+      "title": "Produtos",
+      "items": {
+        "cardProcessor": {
+          "title": "Processadora de Cartões",
+          "description": "Soluções tecnológicas de pagamento"
+        },
+        "paymentGateway": {
+          "title": "Gateway de Pagamento",
+          "description": "Transações em tempo real"
+        },
+        "apis": {
+          "title": "APIs e TOS",
+          "description": "Integrações com a plataforma"
+        },
+        "binSponsor": {
+          "title": "BIN Sponsor e Emissão de Cartões",
+          "description": "Solução completa para emissão de cartões de crédito, débito, múltiplos e pré-pagos"
+        }
+      }
+    },
+    "company": {
+      "title": "Empresa"
+    },
+    "resources": {
+      "title": "Recursos",
+      "items": {
+        "aboutUs": {
+          "title": "Sobre Nós",
+          "description": "Conheça a Tamborine"
+        },
+        "blog": {
+          "title": "Blog",
+          "description": "Notícias e artigos"
+        },
+        "helpCenter": {
+          "title": "Central de Ajuda",
+          "description": "Encontre respostas e suporte para suas dúvidas"
+        }
+      }
+    },
+    "blog": {
+      "title": "Blog"
+    },
+    "help": {
+      "title": "Ajuda"
+    }
+  },
+  "common": {
+    "contactUs": "Fale Conosco",
+    "learnMore": "Saiba mais",
+    "tryNow": "Teste Agora",
+    "getStarted": "Comece Aqui",
+    "freeDemo": "Começar — é grátis"
+  },
+  "metadata": {
+    "home": {
+      "title": "Início"
+    }
+  },
+  "hero": {
+    "newFeature": "Novo recurso!",
+    "systemName": "Tamborine Operation System",
+    "title": {
+      "part1": "Orquestrando a Inovação em",
+      "part2": "Pagamentos"
+    },
+    "description": "Conectamos suas ideias à inovação financeira com uma plataforma moderna, segura e escalável para a emissão de cartões e processamento de pagamentos.",
+    "cta": "Teste Agora"
+  },
+  "stats": {
+    "title": "Nossos Números",
+    "transactions": "Mais de 1M de transações por dia",
+    "availability": "99.99% de disponibilidade",
+    "illustration": "Ilustração de pagamento"
+  },
+  "solutions": {
+    "title": "Soluções tecnológicas inovadoras que redefinem os serviços financeiros",
+    "learnMore": "Saiba mais",
+    "cardProcessor": {
+      "title": "Processadora de Cartões",
+      "description": "Processe pagamentos com cartões utilizando tecnologia e confiabilidade líderes do setor."
+    },
+    "paymentGateway": {
+      "title": "Gateway de Pagamento",
+      "description": "Aceite pagamentos de todo o mundo com nosso gateway de pagamento seguro."
+    },
+    "apis": {
+      "title": "APIs e TOS",
+      "description": "APIs flexíveis e bem documentadas para integrar pagamentos em sua plataforma."
+    },
+    "binSponsor": {
+      "title": "BIN Sponsor e Emissão de Cartões",
+      "description": "Emita seus próprios cartões personalizados com nossa solução completa de patrocínio BIN."
+    }
+  },
+  "products": {
+    "title": "Produtos",
+    "items": {
+      "cardProcessor": {
+        "title": "Processadora de Cartões",
+        "description": "Soluções tecnológicas de pagamento"
+      },
+      "paymentGateway": {
+        "title": "Gateway de Pagamento",
+        "description": "Transações em tempo real"
+      },
+      "apis": {
+        "title": "APIs e TOS",
+        "description": "Integrações com a plataforma"
+      },
+      "binSponsor": {
+        "title": "BIN Sponsor e Emissão de Cartões",
+        "description": "Solução completa para emissão de cartões de crédito, débito, múltiplos e pré-pagos"
+      }
+    }
+  },
+  "horizontalCards": {
+    "title": "Ferramentas financeiras poderosas",
+    "subtitle": "Nossa plataforma oferece um conjunto de ferramentas projetadas para ajudar empresas a gerenciar melhor suas finanças",
+    "cards": {
+      "expenses": {
+        "title": "Acompanhe as despesas da sua equipe",
+        "description": "Veja com o que sua equipe mais gasta"
+      },
+      "creditCard": {
+        "title": "Um cartão para todas as suas necessidades",
+        "description": "Obtenha versões virtuais e físicas"
+      },
+      "transactions": {
+        "title": "Visão simplificada de transações",
+        "description": "Acompanhe seus gastos com facilidade"
+      },
+      "users": {
+        "title": "Gerenciamento de usuários",
+        "description": "Controle permissões e níveis de acesso"
+      }
+    }
+  },
+  "whyTamborine": {
+    "title": "Por que escolher a Tamborine",
+    "subtitle": "Fornecemos uma plataforma moderna e escalável para serviços financeiros",
+    "features": {
+      "security": {
+        "title": "Segurança de nível empresarial",
+        "description": "Infraestrutura em conformidade com PCI-DSS e protocolos de segurança multicamadas"
+      },
+      "integration": {
+        "title": "Integração facilitada",
+        "description": "APIs e SDKs bem documentados para implementação tranquila"
+      },
+      "scalability": {
+        "title": "Construído para escalar",
+        "description": "Arquitetura que cresce com seu negócio, desde startups até grandes empresas"
+      },
+      "support": {
+        "title": "Suporte 24/7",
+        "description": "Assistência especializada disponível a qualquer momento"
+      }
+    }
+  },
+  "display": {
+    "title": "Não construa tudo isso sozinho",
+    "subtitle": "A Coherence remove o trabalho de infraestrutura do seu roteiro"
+  },
+  "about": {
+    "title": "Sobre a Tamborine",
+    "mission": "Nossa Missão",
+    "missionText": "Democratizar o acesso à tecnologia financeira por meio de soluções inovadoras",
+    "vision": "Nossa Visão",
+    "visionText": "Um mundo onde os pagamentos são simples, seguros e acessíveis a todos",
+    "team": "Nossa Equipe",
+    "joinUs": "Junte-se à Nossa Equipe",
+    "careers": "Ver vagas abertas"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "privacyPolicy": "Política de Privacidade",
+    "terms": "Termos de Serviço",
+    "cookies": "Política de Cookies",
+    "sitemap": "Mapa do Site"
+  },
+  "company": {
+    "title": "Empresa"
+  },
+  "resources": {
+    "title": "Recursos",
+    "items": {
+      "aboutUs": {
+        "title": "Sobre Nós",
+        "description": "Conheça a Tamborine"
+      },
+      "blog": {
+        "title": "Blog",
+        "description": "Notícias e artigos"
+      },
+      "helpCenter": {
+        "title": "Central de Ajuda",
+        "description": "Encontre respostas e suporte para suas dúvidas"
+      }
+    }
+  },
+  "blog": {
+    "title": "Blog"
+  },
+  "help": {
+    "title": "Ajuda"
+  },
+  "cardsSolutions": {
+    "title": "Soluções Tamborine",
+    "cards": {
+      "card1": {
+        "title": "Plataforma Escalável e Segura",
+        "description": "Infraestrutura multibandeira com contingência multi-cloud e padrões globais para máxima segurança e confiabilidade."
+      },
+      "card2": {
+        "title": "Emissão de Cartões Personalizável",
+        "description": "Cartões físicos e virtuais com envio remoto de comandos e controle em tempo real, ajustados às suas necessidades."
+      },
+      "card3": {
+        "title": "Processamento de Transações em Alta Performance",
+        "description": "Capacidade para 4.410 transações por segundo com 99,99% de disponibilidade, garantindo agilidade e eficiência."
+      },
+      "card4": {
+        "title": "Integração Flexível de Backoffice",
+        "description": "Integração rápida e completa ao sistema de backoffice de sua escolha, garantindo total compatibilidade e autonomia."
+      },
+      "card5": {
+        "title": "Gestão Simplificada com o TOS",
+        "description": "Sistema proprietário intuitivo para consultas rápidas, maior produtividade e controle centralizado de operações."
+      },
+      "card6": {
+        "title": "Soluções Antifraude Nativas",
+        "description": "Sistema robusto com regras de negócios personalizáveis para proteger transações e garantir operações seguras."
+      }
+    }
+  }
+}

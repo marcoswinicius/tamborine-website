@@ -2,8 +2,11 @@
 
 import { LogIn, Sparkle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 const Hero = () => {
+  const t = useTranslations('hero');
+  
   return (
     <section className="bg-hero flex items-center justify-center w-full" style={{ height: 'calc(100vh - 88px)', maxHeight: '900px' }}>
       <motion.div 
@@ -19,24 +22,24 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Novo recurso!
+          {t('newFeature')}
         </motion.span>
 
         {/* Container principal */}
         <motion.span 
-          className="bg-white/20 px-3 text-white p-2 rounded-full text-sm border border-primary/40 mb-6 flex flex-wrap items-center justify-center gap-2 sm:justify-start"
+          className="bg-white/20 px-3 text-white p-2 rounded-full text-sm border border-[var(--color-primary)] border-opacity-40 mb-6 flex flex-wrap items-center justify-center gap-2 sm:justify-start"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           {/* Visível apenas no desktop */}
           <motion.span 
-            className="hidden sm:inline bg-primary text-dark-green font-medium px-[9px] py-[1px] rounded-full text-sm whitespace-nowrap"
+            className="hidden sm:inline bg-[var(--color-primary)] text-[var(--color-dark-green)] font-medium px-[9px] py-[1px] rounded-full text-sm whitespace-nowrap"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Novo recurso!
+            {t('newFeature')}
           </motion.span>
 
           <motion.p 
@@ -45,7 +48,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            Tamborine Operation System
+            {t('systemName')}
           </motion.p>
           <motion.div
             initial={{ opacity: 0, x: -5 }}
@@ -68,14 +71,14 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            Orquestrando a Inovação em
+            {t('title.part1')}
           </motion.span>
           <motion.span 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
           >
-            Pagamentos
+            {t('title.part2')}
           </motion.span>
         </motion.h1>
 
@@ -85,16 +88,19 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.0 }}
         >
-          Conectamos suas ideias à inovação financeira com uma plataforma moderna, segura e escalável para a emissão de cartões e processamento de pagamentos.
+          {t('description')}
         </motion.p>
 
         <motion.button 
-          className="bg-primary text-solid cursor-pointer flex items-center gap-2 rounded-full px-6 py-3 font-medium hover:bg-opacity-90 transition-colors"
+          className="button text-solid cursor-pointer flex items-center gap-2 px-6 py-3 font-medium"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ 
+            y: -1,
+            backgroundColor: 'var(--color-primary-faded)',
+          }}
           whileTap={{ scale: 0.95 }}
-          transition={{ duration: 0.5, delay: 1.1 }}
+          transition={{ duration: 0.03 }}
         >
           <motion.div
             initial={{ rotate: 0 }}
@@ -103,7 +109,7 @@ const Hero = () => {
           >
             <Sparkle size={20} />
           </motion.div>
-          Teste Agora
+          {t('cta')}
         </motion.button>
       </motion.div>
     </section>

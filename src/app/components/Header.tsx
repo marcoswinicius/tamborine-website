@@ -8,12 +8,15 @@ import { menuItems } from '@/app/data/menuItems';
 import DesktopDropdown from './DesktopDropdown';
 import MobileMenu from './MobileMenu';
 import Logo from './ui/Logo';
+import { useTranslations } from 'next-intl';
 
 export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [, setIsMobile] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const menuT = useTranslations('menu');
+  const commonT = useTranslations('common');
 
   // Check if we're on mobile based on screen width and close mobile menu on large screens
   useEffect(() => {
@@ -83,7 +86,7 @@ export default function Header() {
                       href={item.href}
                       className="py-2 text-base font-medium text-neutral hover:text-[var(--color-primary)] transition-colors"
                     >
-                      {item.title}
+                      {menuT(item.titleKey)}
                     </Link>
                     {item.hasDropdown && (
                       <motion.div 
@@ -112,9 +115,9 @@ export default function Header() {
             <div className="hidden lg:block">
               <Link 
                 href="/contact"
-                className="py-2 px-4 rounded-md bg-[var(--color-primary)] text-[var(--color-solid)] font-medium hover:bg-opacity-90 transition-colors"
+                className="py-2 px-4 rounded-md button text-[var(--color-solid)] font-medium hover:bg-opacity-90 transition-colors"
               >
-                Contact Us
+                {commonT('contactUs')}
               </Link>
             </div>
 

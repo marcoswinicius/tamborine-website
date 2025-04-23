@@ -8,11 +8,23 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
   .title-gradient-hero {
     background-image: var(--gradient-title);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  
+  /* Apenas afeta spans que têm a classe .no-gradient dentro de elementos com gradiente */
+  .title-gradient-hero > span.no-gradient,
+  .title-gradient-custom > span.no-gradient,
+  .text-gradient-hero > span.no-gradient,
+  .text-gradient-custom > span.no-gradient {
+    background-image: none;
+    -webkit-text-fill-color: initial;
+    color: inherit;
+    color: var(--color-primary);
   }
 
   .title-gradient-custom:hover {
@@ -29,6 +41,7 @@
     -webkit-text-fill-color: transparent;
     font-size: var(--font-paragraph-size)-6;
   }
+
   .text-gradient-hero {
     background-image: var(--gradient-paragraph);
     -webkit-background-clip: text;
@@ -51,6 +64,42 @@
     background-repeat: no-repeat;
     background-color: var(--color-dark-green);
   }
+
+  .bg-solutions {
+    background-image: linear-gradient(rgba(32, 43, 48, 0.8), rgba(32, 48, 44, 0.6)), url('/images/bg-starts.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color-dark-green);
+  }
+  .bg-horizontal {
+    background-image: linear-gradient(rgb(32, 48, 44), rgba(32, 43, 48, 1));
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--color-dark-green);
+  }
+
+  .bg-solid {
+    background-image: var(--gradient-solid);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .button {
+    box-shadow: var(--shadow-cyan);
+    background: var(--color-primary);
+    border-radius: calc(infinity * 1px);
+    color: var(--color-solid);
+    position: relative;
+}
+
+.button:hover {
+    background: var(--color-primary-faded);
+}
+
+
 }
 
 :root {
@@ -59,25 +108,27 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-    /* Gradient */
-    --gradient-paragraph: linear-gradient(to top, #DCDCDC 0%, white 100%);
-    --gradient-solid: linear-gradient(to bottom, rgba(167, 233, 127, 0) 0%, #465042 100%);
-    --gradient-title: linear-gradient(to bottom, #FFFFFF 0%, #f6fff0 55%, #d2fabb 100%);
-    --gradient-title-hover: linear-gradient(to bottom, #A7E97F 0%, #A7E97F 55%, #6ead46 100%);
-  
-    /* Typography */
-    --font-paragraph-size: 20px;
-    --font-paragraph-line: 30px;
-  
-    --font-title-size: 72px;
-    --font-title-line: 89px;
-}
-
-@theme {
-  --color-primary: #A7E97F;
+  /* Colors */
+  --color-primary: rgba(167, 233, 127, 1);
+  --color-primary-faded: rgba(167, 233, 127, 0.9);
   --color-neutral: #DCDCDC;
-  --color-solid: #454F41;
-  --color-dark-green: #202B30;
+  --color-solid: rgba(69, 79, 65, 1);
+  --color-dark-green: rgba(32, 43, 48, 1);
+
+  /* Gradient */
+  --gradient-paragraph: linear-gradient(to top, #DCDCDC 0%, white 100%);
+  --gradient-solid: linear-gradient(to bottom, rgba(167, 233, 127, 1) 0%, #465042 100%);
+  --gradient-title: linear-gradient(to bottom, #FFFFFF 0%, #f6fff0 55%, #d2fabb 100%);
+  --gradient-title-hover: linear-gradient(to bottom, #A7E97F 0%, #A7E97F 55%, #6ead46 100%);
+
+  /* Box shadows */
+  --shadow-cyan: 0 0 0 3px rgba(28, 255, 255, 0.3);
+
+  /* Typography */
+  --font-paragraph-size: 20px;
+  --font-paragraph-line: 30px;
+  --font-title-size: 72px;
+  --font-title-line: 89px;
 }
 
 @media (prefers-color-scheme: dark) {
