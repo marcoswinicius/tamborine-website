@@ -175,13 +175,6 @@
     "joinUs": "Join Our Team",
     "careers": "View open positions"
   },
-  "footer": {
-    "rights": "All rights reserved",
-    "privacyPolicy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "cookies": "Cookie Policy",
-    "sitemap": "Sitemap"
-  },
   "company": {
     "title": "Company"
   },
@@ -236,5 +229,32 @@
         "description": "Robust system with customizable business rules to protect transactions and ensure secure operations."
       }
     }
-  }
+  },
+  "cta": {
+    "getStarted": "Enhance your payments",
+    "headline": "Complete solutions for businesses",
+    "description": "Rely on Tamborine to integrate financial services and improve your customers’ experience.",
+    "button": "Contact our team"
+  },
+  "footer": {
+  "products": "Products",
+  "cardProcessor": "Card Processor",
+  "paymentGateway": "Payment Gateway",
+  "apis": "APIs",
+  "binSponsor": "BIN Sponsor",
+  "company": "Company",
+  "companyPage": "Company",
+  "blog": "Blog",
+  "resources": "Resources",
+  "aboutUs": "About Us",
+  "helpCenter": "Help Center",
+  "help": "Help",
+  "newsletterTitle": "Join our newsletter",
+  "newsletterDesc": "Keep up to date with everything Reflect",
+  "newsletterPlaceholder": "Enter your email",
+  "newsletterButton": "Subscribe",
+  "privacyPolicy": "Privacy Policy",
+  "terms": "Terms of Conditions",
+  "copyright": "Tamborine App, LLC. All rights reserved."
+}
 }

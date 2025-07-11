@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { MenuItem } from '@/app/data/menuItems';
@@ -20,7 +19,7 @@ export default function MobileAccordion({ item }: MobileAccordionProps) {
     return (
       <Link 
         href={item.href}
-        className="block py-4 px-6 text-lg font-medium border-b border-[var(--color-neutral)]/10 hover:bg-[var(--color-neutral)]/5 transition-colors"
+        className="block py-4 px-6 text-base font-medium text-gray-300 hover:text-white hover:bg-[var(--color-neutral)]/5 transition-colors"
       >
         {menuT(item.titleKey)}
       </Link>
@@ -31,7 +30,7 @@ export default function MobileAccordion({ item }: MobileAccordionProps) {
     <div className="border-b border-[var(--color-neutral)]/10">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full py-4 px-6 text-lg font-medium hover:bg-[var(--color-neutral)]/5 transition-colors"
+        className="flex items-center justify-between w-full py-4 px-6 text-base font-medium text-gray-300 hover:text-white hover:bg-[var(--color-neutral)]/5 transition-colors"
         aria-expanded={isOpen}
       >
         <span>{menuT(item.titleKey)}</span>
@@ -53,44 +52,29 @@ export default function MobileAccordion({ item }: MobileAccordionProps) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden bg-[var(--color-dark-green)]/20"
           >
-            <div className="py-3 px-4 space-y-4">
+            <div className="py-2">
               {item.subItems.map((subItem) => (
-                <div key={subItem.id} className="p-2 rounded-lg hover:bg-[var(--color-neutral)]/5 transition-colors">
-                  <Link 
-                    href={subItem.href}
-                    className="block"
-                  >
-                    <div className="flex items-center gap-3">
-                      {subItem.icon && (
-                        <div className="w-10 h-10 rounded-lg bg-[var(--color-dark-green)] flex items-center justify-center text-[var(--color-primary)]">
-                          {React.createElement(subItem.icon, { size: 22 })}
-                        </div>
-                      )}
-                      <div>
-                        <h3 className="text-base font-medium text-white">{menuT(subItem.titleKey)}</h3>
-                        {subItem.descriptionKey && (
-                          <p className="text-sm text-[var(--color-neutral)]/70 mt-0.5">
-                            {menuT(subItem.descriptionKey)}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                    
-                    {/* Show image if available */}
-                    {subItem.image && (
-                      <div className="mt-3 rounded-lg overflow-hidden">
-                        <div className="relative h-32">
-                          <Image
-                            src={subItem.image}
-                            alt={menuT(subItem.titleKey)}
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
+                <Link 
+                  key={subItem.id}
+                  href={subItem.href}
+                  className="block px-8 py-3 hover:bg-[var(--color-neutral)]/5 transition-colors"
+                >
+                  <div className="flex items-center gap-3">
+                    {subItem.icon && (
+                      <div className="w-8 h-8 rounded-lg bg-[var(--color-dark-green)] flex items-center justify-center text-[var(--color-primary)]">
+                        {React.createElement(subItem.icon, { size: 18 })}
                       </div>
                     )}
-                  </Link>
-                </div>
+                    <div>
+                      <h3 className="text-sm font-medium text-white">{menuT(subItem.titleKey)}</h3>
+                      {subItem.descriptionKey && (
+                        <p className="text-xs text-[var(--color-neutral)]/70 mt-0.5">
+                          {menuT(subItem.descriptionKey)}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </motion.div>

@@ -1,0 +1,16 @@
+{
+  "contact": {
+    "title": "Contato",
+    "description": "Entre em contato conosco preenchendo o formulário abaixo.",
+    "fields": {
+      "nome": "Nome",
+      "email": "Email",
+      "empresa": "Empresa",
+      "cargo": "Cargo",
+      "telefone": "Telefone",
+      "mensagem": "Mensagem"
+    },
+    "submit": "Enviar",
+    "success": "Mensagem enviada com sucesso!"
+  }
+}

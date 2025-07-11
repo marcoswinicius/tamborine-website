@@ -1,0 +1,16 @@
+{
+  "contact": {
+    "title": "Contact",
+    "description": "Get in touch with us by filling out the form below.",
+    "fields": {
+      "nome": "Name",
+      "email": "Email",
+      "empresa": "Company",
+      "cargo": "Position",
+      "telefone": "Phone",
+      "mensagem": "Message"
+    },
+    "submit": "Send",
+    "success": "Message sent successfully!"
+  }
+}

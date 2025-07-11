@@ -175,13 +175,6 @@
     "joinUs": "Junte-se à Nossa Equipe",
     "careers": "Ver vagas abertas"
   },
-  "footer": {
-    "rights": "Todos os direitos reservados",
-    "privacyPolicy": "Política de Privacidade",
-    "terms": "Termos de Serviço",
-    "cookies": "Política de Cookies",
-    "sitemap": "Mapa do Site"
-  },
   "company": {
     "title": "Empresa"
   },
@@ -236,5 +229,32 @@
         "description": "Sistema robusto com regras de negócios personalizáveis para proteger transações e garantir operações seguras."
       }
     }
-  }
+  },
+  "cta": {
+    "getStarted": "Impulsione seus pagamentos",
+    "headline": "Soluções completas para empresas",
+    "description": "Conte com a Tamborine para integrar serviços financeiros e aprimorar a experiência dos seus clientes.",
+    "button": "Fale com nosso time"
+  },
+  "footer": {
+  "products": "Produtos",
+  "cardProcessor": "Processadora de Cartões",
+  "paymentGateway": "Gateway de Pagamento",
+  "apis": "APIs",
+  "binSponsor": "BIN Sponsor",
+  "company": "Empresa",
+  "companyPage": "Empresa",
+  "blog": "Blog",
+  "resources": "Recursos",
+  "aboutUs": "Sobre Nós",
+  "helpCenter": "Central de Ajuda",
+  "help": "Ajuda",
+  "newsletterTitle": "Assine nossa newsletter",
+  "newsletterDesc": "Fique por dentro de tudo sobre Reflect",
+  "newsletterPlaceholder": "Digite seu e-mail",
+  "newsletterButton": "Assinar",
+  "privacyPolicy": "Política de Privacidade",
+  "terms": "Termos e Condições",
+  "copyright": "Tamborine App, LLC. Todos os direitos reservados."
+}
 }

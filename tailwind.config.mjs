@@ -13,11 +13,6 @@ export default {
           neutral: 'var(--color-neutral)',
           solid: 'var(--color-solid)',
         },
-        backgroundImage: {
-          'gradient-paragraph': 'var(--gradient-paragraph)',
-          'gradient-solid': 'var(--gradient-solid)',
-          'gradient-title': 'var(--gradient-title)',
-        },
         fontSize: {
           paragraph: ['var(--font-paragraph-size)', { lineHeight: 'var(--font-paragraph-line)' }],
           title: ['var(--font-title-size)', { lineHeight: 'var(--font-title-line)' }],
@@ -25,4 +20,4 @@ export default {
       },
     },
     plugins: [],
-  };  
+  };

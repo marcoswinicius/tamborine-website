@@ -6,19 +6,21 @@ import { SubMenuItem } from '@/app/data/menuItems';
 import { BadgeCheck, LucideIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
-
+import BackgroundSquares from './ui/BackgroundSquares'; 
 interface DesktopDropdownProps {
   isOpen: boolean;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
   subItems: SubMenuItem[];
+  isScrolled?: boolean;
 }
 
 export default function DesktopDropdown({
   isOpen,
   onMouseEnter,
   onMouseLeave,
-  subItems
+  subItems,
+  isScrolled = false
 }: DesktopDropdownProps) {
   const menuT = useTranslations('menu');
   const statsT = useTranslations('stats');
@@ -29,8 +31,8 @@ export default function DesktopDropdown({
         <>
           {/* Invisible bridge to prevent gap between menu item and dropdown */}
           <div
-            className="fixed left-0 w-full h-4 z-40"
-            style={{ top: '68px' }}
+            className="fixed left-0 w-full h-4 z-50"
+            style={{ top: '84px' }}
             onMouseEnter={onMouseEnter}
           />
           <motion.div
@@ -38,12 +40,15 @@ export default function DesktopDropdown({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 w-full bg-dropdown shadow-lg z-50 border-b-2 border-b-white"
-            style={{ top: '72px' }}
+            className={`fixed left-0 w-full shadow-lg z-50 border-b-2 border-b-white overflow-hidden ${
+              isScrolled ? 'dropdown-glassmorphism' : 'bg-[var(--color-dark-green)] bg-opacity-90 backdrop-blur-sm'
+            }`}
+            style={{ top: '88px' }}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
           >
-            <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-y-2 md:gap-x-8 auto-rows-auto">
+            <BackgroundSquares className="absolute inset-0 w-full object-cover" style={{ height: '100vh', opacity: 0.3, pointerEvents: 'none' }} />
+            <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-y-2 md:gap-x-8 auto-rows-auto relative z-10">
               {/* Information div on the right side */}
               <div className="hidden lg:block lg:col-span-1 lg:col-start-4 lg:row-span-3 border-l border-solid pl-6 self-start" style={{ borderColor: 'var(--color-solid)' }}>
                 <h3 className="font-medium mb-3 text-primary">{statsT('title')}</h3>

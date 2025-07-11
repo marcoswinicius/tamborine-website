@@ -3,12 +3,13 @@
 import { LogIn, Sparkle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import BackgroundSquares from './ui/BackgroundSquares';
 
 const Hero = () => {
   const t = useTranslations('hero');
   
   return (
-    <section className="bg-hero flex items-center justify-center w-full" style={{ height: 'calc(100vh - 88px)', maxHeight: '900px' }}>
+    <section className="flex items-center justify-center w-full" style={{ height: 'calc(100vh - 88px)', maxHeight: '900px' }}>
       <motion.div 
         className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center"
         initial={{ opacity: 0 }}
@@ -112,6 +113,7 @@ const Hero = () => {
           {t('cta')}
         </motion.button>
       </motion.div>
+      <BackgroundSquares className="absolute inset-0 w-full h-full object-cover" />
     </section>
   );
 };

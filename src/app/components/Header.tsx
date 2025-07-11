@@ -1,29 +1,32 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { menuItems } from '@/app/data/menuItems';
-import DesktopDropdown from './DesktopDropdown';
-import MobileMenu from './MobileMenu';
-import Logo from './ui/Logo';
-import { useTranslations } from 'next-intl';
+import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { menuItems } from "@/app/data/menuItems";
+import DesktopDropdown from "./DesktopDropdown";
+import MobileMenu from "./MobileMenu";
+import Logo from "./ui/Logo";
+import { useTranslations } from "next-intl";
+import LanguageSwitcher from "./ui/LanguageSwitcher";
+import BackgroundSquares from "./ui/BackgroundSquares";
 
 export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [, setIsMobile] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const menuT = useTranslations('menu');
-  const commonT = useTranslations('common');
+  const menuT = useTranslations("menu");
+  const commonT = useTranslations("common");
 
   // Check if we're on mobile based on screen width and close mobile menu on large screens
   useEffect(() => {
     const checkIfMobile = () => {
       const isMobileView = window.innerWidth < 1024;
       setIsMobile(isMobileView);
-      
+
       // Close mobile menu when screen size is lg or larger
       if (!isMobileView) {
         setIsMobileMenuOpen(false);
@@ -34,11 +37,39 @@ export default function Header() {
     checkIfMobile();
 
     // Add event listener for window resize
-    window.addEventListener('resize', checkIfMobile);
+    window.addEventListener("resize", checkIfMobile);
 
     // Cleanup
     return () => {
-      window.removeEventListener('resize', checkIfMobile);
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
+
+  // Handle scroll effect for glassmorphism
+  useEffect(() => {
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrollThreshold = 20;
+          const scrolled = window.scrollY > scrollThreshold;
+          setIsScrolled(scrolled);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    // Initial check
+    handleScroll();
+
+    // Add scroll event listener with passive option for better performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -64,8 +95,18 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-dropdown">
-        <div className="container mx-auto px-4">
+      <header
+        className={`sticky top-0 z-50 overflow-hidden ${
+          isScrolled ? "header-glassmorphism" : "header-solid"
+        }`}
+      >
+        <motion.div
+          animate={{ opacity: isScrolled ? 0.2 : 1 }}
+          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+        >
+
+        </motion.div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="flex items-center justify-between h-[88px]">
             {/* Logo */}
             <Link href="/" className="relative h-8 w-32">
@@ -78,51 +119,59 @@ export default function Header() {
                 <div
                   key={item.id}
                   className="relative group"
-                  onMouseEnter={() => item.hasDropdown ? handleMouseEnter(item.id) : null}
+                  onMouseEnter={() =>
+                    item.hasDropdown ? handleMouseEnter(item.id) : null
+                  }
                   onMouseLeave={item.hasDropdown ? handleMouseLeave : undefined}
                 >
                   <div className="flex items-center">
-                    <Link 
+                    <Link
                       href={item.href}
                       className="py-2 text-base font-medium text-neutral hover:text-[var(--color-primary)] transition-colors"
                     >
                       {menuT(item.titleKey)}
                     </Link>
                     {item.hasDropdown && (
-                      <motion.div 
+                      <motion.div
                         className="ml-1 text-neutral"
-                        animate={{ rotate: activeDropdown === item.id ? 180 : 0 }}
+                        animate={{
+                          rotate: activeDropdown === item.id ? 180 : 0,
+                        }}
                         transition={{ duration: 0.3 }}
                       >
                         <ChevronDown size={16} />
                       </motion.div>
                     )}
                   </div>
-                  
+
                   {item.hasDropdown && item.subItems && (
                     <DesktopDropdown
                       isOpen={activeDropdown === item.id}
                       onMouseEnter={() => handleMouseEnter(item.id)}
                       onMouseLeave={handleMouseLeave}
                       subItems={item.subItems}
+                      isScrolled={isScrolled}
                     />
                   )}
                 </div>
               ))}
+
+              {/* Language Switcher (Desktop) */}
+              <LanguageSwitcher />
             </nav>
 
             {/* Contact Button (Desktop) */}
             <div className="hidden lg:block">
-              <Link 
+              <Link
                 href="/contact"
                 className="py-2 px-4 rounded-md button text-[var(--color-solid)] font-medium hover:bg-opacity-90 transition-colors"
               >
-                {commonT('contactUs')}
+                {commonT("contactUs")}
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
-            <button 
+            <button
               className="lg:hidden p-2"
               onClick={toggleMobileMenu}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -131,15 +180,15 @@ export default function Header() {
                 animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                {isMobileMenuOpen ? (
-                  <X size={24} />
-                ) : (
-                  <Menu size={24} />
-                )}
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </motion.div>
             </button>
           </div>
         </div>
+         <BackgroundSquares
+            className="absolute inset-0 w-full object-cover"
+            style={{ height: "100vh", transform: "translateY(0)" }}
+          />
       </header>
 
       {/* Mobile Menu */}
