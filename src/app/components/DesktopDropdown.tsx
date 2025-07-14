@@ -34,6 +34,7 @@ export default function DesktopDropdown({
             className="fixed left-0 w-full h-4 z-50"
             style={{ top: '84px' }}
             onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave} // Adicionado para fechar imediatamente
           />
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -45,7 +46,7 @@ export default function DesktopDropdown({
             }`}
             style={{ top: '88px' }}
             onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            onMouseLeave={onMouseLeave} // Garante fechamento imediato
           >
             <BackgroundSquares className="absolute inset-0 w-full object-cover" style={{ height: '100vh', opacity: 0.3, pointerEvents: 'none' }} />
             <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-y-2 md:gap-x-8 auto-rows-auto relative z-10">

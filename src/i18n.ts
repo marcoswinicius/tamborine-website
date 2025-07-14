@@ -7,5 +7,14 @@ export const routes = {
     en: '/contact',
     pt: '/contato',
   },
+  '/processadora-de-cartoes': {
+    en: '/card-processor',
+    pt: '/processadora-de-cartoes',
+  },
+  '/gateway-de-pagamento': {
+    en: '/payment-gateway',
+    pt: '/gateway-de-pagamento',
+  },
+  
   // ...outras rotas...
 };

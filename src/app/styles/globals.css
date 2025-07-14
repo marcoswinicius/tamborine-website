@@ -2,50 +2,8 @@
 
 @layer utilities {
 
-  /* Glassmorphism effect for header */
-  .header-glassmorphism {
-    backdrop-filter: blur(30px) saturate(200%);
-    background: rgba(32, 43, 48, 0.9);
-    border-bottom: 1px solid rgba(167, 233, 127, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 
-                0 2px 16px rgba(167, 233, 127, 0.15);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Light theme glassmorphism */
-  :root.light .header-glassmorphism {
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid rgba(76, 175, 80, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 
-                0 2px 16px rgba(76, 175, 80, 0.15);
-  }
-
-  /* Header default state */
-  .header-solid {
-    background: var(--color-dark-green);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  /* Enhanced text visibility on glassmorphism header */
-  .header-glassmorphism .text-neutral {
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  }
-
-  :root.light .header-glassmorphism .text-neutral {
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
-  }
-
-  /* Enhanced button visibility on glassmorphism header */
-  .header-glassmorphism .button {
-    box-shadow: var(--shadow-cyan), 0 4px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  :root.light .header-glassmorphism .button {
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3), 0 4px 16px rgba(0, 0, 0, 0.1);
-  }
-
   .title-gradient-custom {
-    background-image: var(--gradient-title);
+    
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -60,7 +18,6 @@
   
   /* Apenas afeta spans que têm a classe .no-gradient dentro de elementos com gradiente */
   .title-gradient-hero > span.no-gradient,
-  .title-gradient-custom > span.no-gradient,
   .text-gradient-hero > span.no-gradient,
   .text-gradient-custom > span.no-gradient {
     background-image: none;
@@ -70,7 +27,6 @@
   }
 
   .title-gradient-custom:hover {
-    background-image: var(--gradient-title-hover);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -153,11 +109,15 @@
   }
 
   .button {
+    display: flex;
+    align-items: center;
     box-shadow: var(--shadow-cyan);
     background: var(--color-primary);
     border-radius: calc(infinity * 1px);
     color: var(--color-solid);
     position: relative;
+    cursor: pointer;
+    font-weight: 500;
 }
 
 .button:hover {
@@ -178,6 +138,15 @@
     border-bottom: 1px solid rgba(76, 175, 80, 0.2);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 
                 0 2px 16px rgba(76, 175, 80, 0.1);
+  }
+
+  /* Dropdown group hover effect */
+  .dropdown-group:hover .dropdown-group-hover\:opacity-100 {
+    opacity: 1;
+  }
+
+  .dropdown-group:hover .dropdown-group-hover\:visible {
+    visibility: visible;
   }
 
 }
@@ -201,7 +170,7 @@
   --color-foreground: var(--foreground);
 
   /* Colors */
-  --color-primary: rgba(167, 233, 127, 1);
+  --color-primary: #a7e97f;
   --color-primary-faded: rgba(167, 233, 127, 0.9);
   --color-neutral: #DCDCDC;
   --color-solid: rgba(69, 79, 65, 1);
@@ -264,42 +233,4 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-}
-
-/* Scrollbar styling for both themes */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-:root.dark ::-webkit-scrollbar-thumb {
-  background: rgba(167, 233, 127, 0.3);
-  border-radius: 4px;
-}
-
-:root.dark ::-webkit-scrollbar-thumb:hover {
-  background: rgba(167, 233, 127, 0.5);
-}
-
-:root.light ::-webkit-scrollbar-thumb {
-  background: rgba(76, 175, 80, 0.3);
-  border-radius: 4px;
-}
-
-:root.light ::-webkit-scrollbar-thumb:hover {
-  background: rgba(76, 175, 80, 0.5);
-}
-
-/* Selection styling for both themes */
-:root.dark ::selection {
-  background: rgba(167, 233, 127, 0.3);
-  color: var(--foreground);
-}
-
-:root.light ::selection {
-  background: rgba(76, 175, 80, 0.3);
-  color: var(--foreground);
 }

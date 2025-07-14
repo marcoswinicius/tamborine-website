@@ -1,197 +1,146 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { Menu, X, ChevronDown, BadgeCheck, LucideIcon } from "lucide-react";
 import { menuItems } from "@/app/data/menuItems";
-import DesktopDropdown from "./DesktopDropdown";
 import MobileMenu from "./MobileMenu";
 import Logo from "./ui/Logo";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./ui/LanguageSwitcher";
-import BackgroundSquares from "./ui/BackgroundSquares";
 
 export default function Header() {
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [, setIsMobile] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const menuT = useTranslations("menu");
   const commonT = useTranslations("common");
-
-  // Check if we're on mobile based on screen width and close mobile menu on large screens
-  useEffect(() => {
-    const checkIfMobile = () => {
-      const isMobileView = window.innerWidth < 1024;
-      setIsMobile(isMobileView);
-
-      // Close mobile menu when screen size is lg or larger
-      if (!isMobileView) {
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    // Initial check
-    checkIfMobile();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", checkIfMobile);
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("resize", checkIfMobile);
-    };
-  }, []);
-
-  // Handle scroll effect for glassmorphism
-  useEffect(() => {
-    let ticking = false;
-
-    const handleScroll = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const scrollThreshold = 20;
-          const scrolled = window.scrollY > scrollThreshold;
-          setIsScrolled(scrolled);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    // Initial check
-    handleScroll();
-
-    // Add scroll event listener with passive option for better performance
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  // Handle dropdown hover
-  const handleMouseEnter = (itemId: string) => {
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
-      dropdownTimeoutRef.current = null;
-    }
-    setActiveDropdown(itemId);
-  };
-
-  const handleMouseLeave = () => {
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 300); // Increased delay to prevent accidental closing when moving to dropdown
-  };
-
-  // Toggle mobile menu
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const statsT = useTranslations("stats");
 
   return (
     <>
-      <header
-        className={`sticky top-0 z-50 overflow-hidden ${
-          isScrolled ? "header-glassmorphism" : "header-solid"
-        }`}
-      >
-        <motion.div
-          animate={{ opacity: isScrolled ? 0.2 : 1 }}
-          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-        >
-
-        </motion.div>
+      <header className="sticky top-0 z-50 transition-all duration-300 bg-[var(--color-dark-green)] backdrop-blur-sm">
         <div className="container mx-auto px-4 relative z-10">
-          <div className="flex items-center justify-between h-[88px]">
-            {/* Logo */}
-            <Link href="/" className="relative h-8 w-32">
+          <div className="flex items-center justify-between h-16">
+            <Link href="/" className="flex items-center">
               <Logo />
             </Link>
 
-            {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
               {menuItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="relative group"
-                  onMouseEnter={() =>
-                    item.hasDropdown ? handleMouseEnter(item.id) : null
-                  }
-                  onMouseLeave={item.hasDropdown ? handleMouseLeave : undefined}
-                >
-                  <div className="flex items-center">
-                    <Link
-                      href={item.href}
-                      className="py-2 text-base font-medium text-neutral hover:text-[var(--color-primary)] transition-colors"
-                    >
-                      {menuT(item.titleKey)}
-                    </Link>
-                    {item.hasDropdown && (
-                      <motion.div
-                        className="ml-1 text-neutral"
-                        animate={{
-                          rotate: activeDropdown === item.id ? 180 : 0,
-                        }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        <ChevronDown size={16} />
-                      </motion.div>
-                    )}
-                  </div>
-
+                <div key={item.id} className="relative dropdown-group w-full">
+                  <Link
+                    href={item.href}
+                    className="flex items-center py-2 font-medium hover:text-[var(--color-primary)] transition-colors"
+                  >
+                    {menuT(item.titleKey)}
+                    {item.hasDropdown && <ChevronDown size={16} className="ml-1" />}
+                  </Link>
+                  
                   {item.hasDropdown && item.subItems && (
-                    <DesktopDropdown
-                      isOpen={activeDropdown === item.id}
-                      onMouseEnter={() => handleMouseEnter(item.id)}
-                      onMouseLeave={handleMouseLeave}
-                      subItems={item.subItems}
-                      isScrolled={isScrolled}
-                    />
+                    <>
+                      {/* Invisible bridge to prevent gap between menu item and dropdown */}
+                      <div className="absolute top-full left-0 w-full h-4 z-50" />
+                      <div className="fixed left-0 right-0 top-full shadow-lg z-50 border-b-2 border-b-white bg-[var(--color-dark-green)] bg-opacity-90 backdrop-blur-sm opacity-0 invisible dropdown-group-hover:opacity-100 dropdown-group-hover:visible transition-all duration-200" style={{ top: '64px' }}>
+                        <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-y-2 md:gap-x-8 auto-rows-auto relative z-10">
+                          {/* Information div on the right side */}
+                          <div className="hidden lg:block lg:col-span-1 lg:col-start-4 lg:row-span-3 border-l border-solid pl-6 self-start" style={{ borderColor: 'var(--color-solid)' }}>
+                            <h3 className="font-medium mb-3 text-primary">{statsT('title')}</h3>
+                            <div className='flex flex-col gap-4'>
+                              <span className='text-gradient-custom'>
+                                <BadgeCheck className="inline mr-2 text-neutral" />
+                                {statsT('transactions')}
+                              </span>
+                              <span className='text-gradient-custom'>
+                                <BadgeCheck className="inline mr-2 text-neutral" />
+                                {statsT('availability')}
+                              </span>
+                            </div>
+                            <Image 
+                              src="/images/payment-illustration.svg"
+                              alt={statsT('illustration')} 
+                              width={200} 
+                              height={200} 
+                              className="mt-4"
+                            />
+                          </div>
+                          
+                          {/* Menu items */}
+                          {item.subItems.map((subItem) => (
+                            <div 
+                              key={subItem.id} 
+                              className={`flex flex-col ${
+                                subItem.id === "product-1" ? "lg:col-start-1 lg:row-start-1 h-full" : 
+                                subItem.id === "product-2" ? "lg:col-start-1 lg:row-start-2 h-full" : 
+                                subItem.id === "product-3" ? "lg:col-start-2 lg:row-start-1 h-full" :
+                                subItem.id === "product-4" ? "lg:col-start-2 lg:row-start-2 h-full" :
+                                "h-full"
+                              }`}
+                            >
+                              <div className="flex flex-col p-4 rounded-lg hover:bg-white/5 transition-colors group">
+                                <div className="">
+                                  {subItem.icon && (
+                                    <div className="mb-3 w-fit">
+                                      {React.createElement(subItem.icon as LucideIcon, {
+                                        size: 20,
+                                        className: "text-[var(--color-primary)] stroke-2 transition-colors duration-200",
+                                        strokeWidth: 1.5
+                                      })}
+                                    </div>
+                                  )}
+                                  <Link
+                                    href={subItem.href}
+                                    className="text-lg font-medium bg-linear-to-r from-[#deffcb] to-white bg-clip-text text-transparent group-hover:text-[var(--color-primary)] transition-colors duration-200"
+                                  >
+                                    {menuT(subItem.titleKey)}
+                                  </Link>
+                                </div>
+                                {subItem.descriptionKey && (
+                                  <p className="text-gradient-custom text-sm pl-0">
+                                    {menuT(subItem.descriptionKey)}
+                                  </p>
+                                )}
+                                {subItem.id === "product-4" && (
+                                  <div className="mt-4">
+                                    <Image
+                                      src="/credit-card.svg"
+                                      alt={menuT('products.items.binSponsor.title')}
+                                      width={131*1.5}
+                                      height={80*1.5}
+                                    />
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </>
                   )}
                 </div>
               ))}
-
-              {/* Language Switcher (Desktop) */}
-              <LanguageSwitcher />
             </nav>
 
-            {/* Contact Button (Desktop) */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:flex gap-8 items-center">
+              <LanguageSwitcher />
               <Link
-                href="/contact"
-                className="py-2 px-4 rounded-md button text-[var(--color-solid)] font-medium hover:bg-opacity-90 transition-colors"
+                href="/contato"
+                className="button px-4 py-1"
               >
                 {commonT("contactUs")}
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               className="lg:hidden p-2"
-              onClick={toggleMobileMenu}
-              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
             >
-              <motion.div
-                animate={{ rotate: isMobileMenuOpen ? 90 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </motion.div>
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
-         <BackgroundSquares
-            className="absolute inset-0 w-full object-cover"
-            style={{ height: "100vh", transform: "translateY(0)" }}
-          />
       </header>
 
-      {/* Mobile Menu */}
       <MobileMenu isOpen={isMobileMenuOpen} menuItems={menuItems} />
     </>
   );

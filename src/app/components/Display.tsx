@@ -1,11 +1,17 @@
+"use client";
+
+import { useTranslations } from "next-intl";
+
 const Display = () => {
+    const t = useTranslations("display");
+    
     return (
         <div className="flex flex-col items-center w-full justify-center space-y-12 py-16 md:py-24">
             <div className="container mx-auto px-4 md:px-6 flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl">
-                    <span className="no-gradient text-[var(--color-primary)]">Don&apos;t build all this stuff yourself.</span>
+                    <span className="no-gradient text-[var(--color-primary)]">{t("title")}</span>
                     <span className="title-gradient-hero">
-                    ‎ Coherence gets infrastructure work off your roadmap.
+                    {' '}{t("subtitle")}
                     </span>
                 </h2>
             </div>

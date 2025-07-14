@@ -48,6 +48,10 @@
       "title": "Help"
     }
   },
+  "languageSwitcher": {
+    "portuguese": "Portuguese",
+    "english": "English"
+  },
   "common": {
     "contactUs": "Contact Us",
     "learnMore": "Learn more",
@@ -58,6 +62,10 @@
   "metadata": {
     "home": {
       "title": "Home"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Articles, news and insights about the future of digital payments"
     }
   },
   "hero": {
@@ -162,8 +170,8 @@
     }
   },
   "display": {
-    "title": "Don't build all this stuff yourself",
-    "subtitle": "Coherence gets infrastructure work off your roadmap"
+    "title": "Unique Approach.",
+    "subtitle": "New Perspective for the FinTech Sector."
   },
   "about": {
     "title": "About Tamborine",
@@ -196,7 +204,28 @@
     }
   },
   "blog": {
-    "title": "Blog"
+    "title": "Blog",
+    "description": "Articles, news and insights about the future of digital payments",
+    "searchPlaceholder": "Search articles...",
+    "categories": {
+      "all": "All",
+      "technology": "Technology",
+      "fintech": "FinTech",
+      "payments": "Payments",
+      "innovation": "Innovation"
+    },
+    "readTime": "min read",
+    "noPosts": "No articles found",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "tags": "Tags",
+    "shareArticle": "Share article",
+    "copyLink": "Copy link",
+    "copied": "Copied!",
+    "lastUpdated": "Last updated",
+    "relatedPosts": "Related articles"
   },
   "help": {
     "title": "Help"
@@ -250,7 +279,7 @@
   "helpCenter": "Help Center",
   "help": "Help",
   "newsletterTitle": "Join our newsletter",
-  "newsletterDesc": "Keep up to date with everything Reflect",
+  "newsletterDesc": "Keep up to date with everything Tamborine",
   "newsletterPlaceholder": "Enter your email",
   "newsletterButton": "Subscribe",
   "privacyPolicy": "Privacy Policy",

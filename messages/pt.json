@@ -48,6 +48,10 @@
       "title": "Ajuda"
     }
   },
+  "languageSwitcher": {
+    "portuguese": "Português",
+    "english": "Inglês"
+  },
   "common": {
     "contactUs": "Fale Conosco",
     "learnMore": "Saiba mais",
@@ -58,6 +62,10 @@
   "metadata": {
     "home": {
       "title": "Início"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Artigos, notícias e insights sobre o futuro dos pagamentos digitais"
     }
   },
   "hero": {
@@ -162,8 +170,8 @@
     }
   },
   "display": {
-    "title": "Não construa tudo isso sozinho",
-    "subtitle": "A Coherence remove o trabalho de infraestrutura do seu roteiro"
+    "title": "Abordagem única.",
+    "subtitle": "Nova perspectiva para o setor de tecnologia financeira."
   },
   "about": {
     "title": "Sobre a Tamborine",
@@ -196,7 +204,28 @@
     }
   },
   "blog": {
-    "title": "Blog"
+    "title": "Blog",
+    "description": "Artigos, notícias e insights sobre o futuro dos pagamentos digitais",
+    "searchPlaceholder": "Buscar artigos...",
+    "categories": {
+      "all": "Todos",
+      "technology": "Tecnologia",
+      "fintech": "FinTech",
+      "payments": "Pagamentos",
+      "innovation": "Inovação"
+    },
+    "readTime": "min de leitura",
+    "noPosts": "Nenhum artigo encontrado",
+    "pagination": {
+      "previous": "Anterior",
+      "next": "Próximo"
+    },
+    "tags": "Tags",
+    "shareArticle": "Compartilhar artigo",
+    "copyLink": "Copiar link",
+    "copied": "Copiado!",
+    "lastUpdated": "Última atualização",
+    "relatedPosts": "Artigos relacionados"
   },
   "help": {
     "title": "Ajuda"
@@ -250,7 +279,7 @@
   "helpCenter": "Central de Ajuda",
   "help": "Ajuda",
   "newsletterTitle": "Assine nossa newsletter",
-  "newsletterDesc": "Fique por dentro de tudo sobre Reflect",
+  "newsletterDesc": "Fique por dentro de tudo sobre a Tamborine",
   "newsletterPlaceholder": "Digite seu e-mail",
   "newsletterButton": "Assinar",
   "privacyPolicy": "Política de Privacidade",

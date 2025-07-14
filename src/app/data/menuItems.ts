@@ -27,7 +27,7 @@ export const menuItems: MenuItem[] = [
       {
         id: "product-1",
         titleKey: "products.items.cardProcessor.title",
-        href: "/products/product-1",
+        href: "/processadora-de-cartoes",
         descriptionKey: "products.items.cardProcessor.description",
         icon: CircuitBoard,
         image: "/images/operation-system.png"
@@ -35,7 +35,7 @@ export const menuItems: MenuItem[] = [
       {
         id: "product-2",
         titleKey: "products.items.paymentGateway.title",
-        href: "/products/product-2",
+        href: "/gateway-de-pagamento",
         descriptionKey: "products.items.paymentGateway.description",
         icon: ArrowLeftRight,
         image: "/images/solutions/paymentGateway.jpg"
@@ -43,7 +43,7 @@ export const menuItems: MenuItem[] = [
       {
         id: "product-3",
         titleKey: "products.items.apis.title",
-        href: "/products/product-3",
+        href: "/tos",
         descriptionKey: "products.items.apis.description",
         icon: Webhook,
         image: "/images/solutions/apis.jpg"
@@ -51,7 +51,7 @@ export const menuItems: MenuItem[] = [
       {
         id: "product-4",
         titleKey: "products.items.binSponsor.title",
-        href: "/products/product-3",
+        href: "/bin-sponsor-e-emissao-de-cartoes",
         descriptionKey: "products.items.binSponsor.description",
         icon: CreditCard,
         image: "/images/solutions/binSponsor.jpg"
@@ -61,7 +61,7 @@ export const menuItems: MenuItem[] = [
   {
     id: "company",
     titleKey: "company.title",
-    href: "/company"
+    href: "/about"
   },
   {
     id: "resources",
@@ -72,21 +72,21 @@ export const menuItems: MenuItem[] = [
       {
         id: "resource-1",
         titleKey: "resources.items.aboutUs.title",
-        href: "/resources/resource-1",
+        href: "/about",
         descriptionKey: "resources.items.aboutUs.description",
         icon: Users
       },
       {
         id: "resource-2",
         titleKey: "resources.items.blog.title",
-        href: "/resources/resource-2",
+        href: "/blog",
         descriptionKey: "resources.items.blog.description",
         icon: Rss
       },
       {
         id: "resource-3",
         titleKey: "resources.items.helpCenter.title",
-        href: "/resources/resource-3",
+        href: "/help",
         descriptionKey: "resources.items.helpCenter.description",
         icon: LifeBuoy
       }

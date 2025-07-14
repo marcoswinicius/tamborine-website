@@ -9,9 +9,10 @@ const Hero = () => {
   const t = useTranslations('hero');
   
   return (
-    <section className="flex items-center justify-center w-full" style={{ height: 'calc(100vh - 88px)', maxHeight: '900px' }}>
+    <section className="relative flex items-center justify-center w-full overflow-hidden" style={{ height: 'calc(100vh - 88px)', maxHeight: '900px' }}>
+      <BackgroundSquares className='absolute inset-0 opacity-80' />
       <motion.div 
-        className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center"
+        className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center relative z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -93,7 +94,7 @@ const Hero = () => {
         </motion.p>
 
         <motion.button 
-          className="button text-solid cursor-pointer flex items-center gap-2 px-6 py-3 font-medium"
+          className="button gap-2 px-6 py-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           whileHover={{ 
@@ -113,7 +114,6 @@ const Hero = () => {
           {t('cta')}
         </motion.button>
       </motion.div>
-      <BackgroundSquares className="absolute inset-0 w-full h-full object-cover" />
     </section>
   );
 };

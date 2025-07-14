@@ -2,17 +2,18 @@ import { Space_Grotesk } from "next/font/google";
 import "@/app/styles/globals.css";
 import type { Metadata } from "next";
 import Header from "@/app/components/Header";
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { notFound } from 'next/navigation';
-import {routing} from '@/i18n/routing';
+import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
 import Footer from "../components/Footer";
+import NextTopLoader from "nextjs-toploader";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Tamborine',
-    default: 'Tamborine',
+    template: "%s | Tamborine",
+    default: "Tamborine",
   },
-}
+};
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-sans",
@@ -22,13 +23,13 @@ const spaceGrotesk = Space_Grotesk({
 
 export default async function LocaleLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: Promise<{ locale: string }>;
 }) {
   // Ensure that the incoming `locale` is valid
-  const {locale} = await params;
+  const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
@@ -36,6 +37,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={`${spaceGrotesk.variable} antialiased`}>
+        <NextTopLoader color="#a7e97f" />
         <NextIntlClientProvider>
           <Header />
           {children}
