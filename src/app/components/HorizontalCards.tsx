@@ -47,7 +47,7 @@ const Card: React.FC<CardProps & { index: number; scrollProgress: number }> = ({
         </div>
       ) : children ? (
         <div className="mb-3 pt-8 md:pt-12 lg:pt-16 flex items-center justify-center w-full overflow-hidden">
-          <div className="w-full h-full scale-[0.85] md:scale-90 lg:scale-100 transform transition-transform">
+          <div className="flex items-center justify-center w-full h-full scale-[0.85] md:scale-90 lg:scale-100 transform transition-transform">
             {children}
           </div>
         </div>
@@ -152,7 +152,7 @@ const HorizontalCards: React.FC<HorizontalCardsProps> = ({
           viewport={{ once: true }}
         >
           {title && (
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               {title}
             </h2>
           )}

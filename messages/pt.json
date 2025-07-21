@@ -105,7 +105,14 @@
     }
   },
   "products": {
-    "title": "Produtos",
+    "title": "Nossos Produtos",
+    "subtitle": "Descubra nossa suíte completa de soluções de tecnologia financeira projetadas para transformar suas operações empresariais.",
+    "learnMore": "Saiba mais",
+    "cta": {
+      "title": "Pronto para começar?",
+      "description": "Entre em contato conosco para descobrir qual solução é ideal para o seu negócio.",
+      "button": "Fale conosco"
+    },
     "items": {
       "cardProcessor": {
         "title": "Processadora de Cartões",
@@ -266,24 +273,253 @@
     "button": "Fale com nosso time"
   },
   "footer": {
-  "products": "Produtos",
-  "cardProcessor": "Processadora de Cartões",
-  "paymentGateway": "Gateway de Pagamento",
-  "apis": "APIs",
-  "binSponsor": "BIN Sponsor",
-  "company": "Empresa",
-  "companyPage": "Empresa",
-  "blog": "Blog",
-  "resources": "Recursos",
-  "aboutUs": "Sobre Nós",
-  "helpCenter": "Central de Ajuda",
-  "help": "Ajuda",
-  "newsletterTitle": "Assine nossa newsletter",
-  "newsletterDesc": "Fique por dentro de tudo sobre a Tamborine",
-  "newsletterPlaceholder": "Digite seu e-mail",
-  "newsletterButton": "Assinar",
-  "privacyPolicy": "Política de Privacidade",
-  "terms": "Termos e Condições",
-  "copyright": "Tamborine App, LLC. Todos os direitos reservados."
-}
+    "products": "Produtos",
+    "cardProcessor": "Processadora de Cartões",
+    "paymentGateway": "Gateway de Pagamento",
+    "apis": "APIs",
+    "binSponsor": "BIN Sponsor",
+    "company": "Empresa",
+    "companyPage": "Empresa",
+    "blog": "Blog",
+    "resources": "Recursos",
+    "aboutUs": "Sobre Nós",
+    "helpCenter": "Central de Ajuda",
+    "help": "Ajuda",
+    "newsletterTitle": "Assine nossa newsletter",
+    "newsletterDesc": "Fique por dentro de tudo sobre a Tamborine",
+    "newsletterPlaceholder": "Digite seu e-mail",
+    "newsletterButton": "Assinar",
+    "privacyPolicy": "Política de Privacidade",
+    "terms": "Termos e Condições",
+    "copyright": "Tamborine App, LLC. Todos os direitos reservados."
+  },
+  "notFound": {
+    "title": "Página Não Encontrada",
+    "subtitle": "Ops! A página que você está procurando não existe.",
+    "description": "A página que você está tentando acessar pode ter sido movida, deletada ou você digitou uma URL incorreta.",
+    "backToHome": "Voltar ao Início",
+    "or": "ou",
+    "contactSupport": "Entre em Contato"
+  },
+  "contact": {
+    "badge": "Fale Conosco",
+    "badgeSubtitle": "Estamos aqui para ajudar",
+    "title": {
+      "part1": "Entre em",
+      "part2": "Contato"
+    },
+    "subtitle": "Na Tamborine, estamos prontos para ajudar você a transformar o futuro dos serviços financeiros. Entre em contato com nossa equipe para dúvidas, parcerias ou suporte técnico.",
+    "form": {
+      "title": "Entre em Contato Conosco",
+      "subtitle": "Preencha o formulário e nossa equipe entrará em contato em até 24 horas.",
+      "fields": {
+        "name": "Nome completo",
+        "namePlaceholder": "Seu nome completo",
+        "email": "E-mail corporativo",
+        "emailPlaceholder": "seu@email.com.br",
+        "cnpj": "CNPJ",
+        "cnpjPlaceholder": "00.000.000/0000-00",
+        "phone": "Telefone com DDD",
+        "phonePlaceholder": "(11) 99999-9999",
+        "subject": "Assunto",
+        "subjectPlaceholder": "Selecione um assunto",
+        "message": "Mensagem",
+        "messagePlaceholder": "Conte-nos como podemos ajudar...",
+        "required": "*"
+      },
+      "subjects": {
+        "commercial": "Interesse comercial",
+        "support": "Suporte técnico",
+        "partnerships": "Parcerias",
+        "press": "Imprensa",
+        "others": "Outros"
+      },
+      "privacy": {
+        "title": "Seus dados estão protegidos.",
+        "description": "Utilizamos criptografia e seguimos rigorosos padrões de segurança."
+      },
+      "submit": "Enviar Mensagem",
+      "submitting": "Enviando...",
+      "success": {
+        "title": "Mensagem enviada com sucesso!",
+        "description": "Nossa equipe entrará em contato em até 24 horas.",
+        "newMessage": "Enviar nova mensagem"
+      }
+    },
+    "info": {
+      "email": "E-mail",
+      "phone": "Telefone",
+      "whatsapp": "WhatsApp",
+      "hours": "Horário"
+    },
+    "contactOptions": {
+      "title": {
+        "part1": "Para Quem é Sua",
+        "part2": "Mensagem?"
+      },
+      "subtitle": "Direcionamos sua mensagem para a equipe certa, garantindo uma resposta mais rápida e precisa.",
+      "options": {
+        "client": {
+          "title": "Quero ser cliente",
+          "description": "Descubra como nossas soluções podem impulsionar seu negócio",
+          "email": "contato@tamborine.com.br"
+        },
+        "support": {
+          "title": "Suporte técnico",
+          "description": "Precisa de ajuda com nossa plataforma ou APIs?",
+          "email": "suporte@tamborine.com.br"
+        },
+        "partnerships": {
+          "title": "Parcerias comerciais",
+          "description": "Vamos construir o futuro dos pagamentos juntos",
+          "email": "parcerias@tamborine.com.br"
+        }
+      }
+    },
+    "socialMedia": {
+      "title": {
+        "part1": "Siga-nos nas",
+        "part2": "Redes Sociais"
+      },
+      "subtitle": "Acompanhe as últimas novidades, insights do mercado financeiro e atualizações sobre nossos produtos."
+    },
+    "additionalInfo": {
+      "title": "Informações Adicionais",
+      "businessHours": {
+        "title": "Horário de Atendimento",
+        "description": "Segunda a sexta-feira, das 9h às 18h",
+        "note": "Exceto feriados nacionais"
+      },
+      "certifications": {
+        "title": "Certificações",
+        "description": "PCI DSS Level 1 certificado",
+        "note": "Máxima segurança para seus dados"
+      },
+      "operation": {
+        "title": "Operação",
+        "description": "100% digital e remota",
+        "note": "Atendimento em todo o Brasil"
+      }
+    }
+  },
+  "cardProcessorPage": {
+    "hero": {
+      "badge": {
+        "highlight": "Processamento Avançado",
+        "description": "Tecnologia de ponta para pagamentos"
+      },
+      "title": "Processadora de Cartões de Alta Performance",
+      "subtitle": "Processe pagamentos com cartões de crédito e débito utilizando a tecnologia mais avançada do mercado. Segurança máxima, velocidade incomparável e confiabilidade comprovada.",
+      "cta": "Falar com Especialista"
+    },
+    "features": {
+      "title": "Recursos que Revolucionam Pagamentos",
+      "subtitle": "Nossa plataforma oferece todos os recursos necessários para processar pagamentos de forma segura, rápida e eficiente.",
+      "items": {
+        "security": {
+          "title": "Segurança Avançada",
+          "description": "Tecnologia de ponta com criptografia de última geração e conformidade com PCI-DSS para máxima proteção de dados."
+        },
+        "processing": {
+          "title": "Processamento Instantâneo",
+          "description": "Transações processadas em milissegundos com 99,99% de disponibilidade para garantir a melhor experiência do usuário."
+        },
+        "global": {
+          "title": "Cobertura Global",
+          "description": "Aceite pagamentos de qualquer lugar do mundo com suporte a múltiplas moedas e bandeiras de cartão."
+        },
+        "analytics": {
+          "title": "Analytics Avançado",
+          "description": "Dashboard em tempo real com relatórios detalhados e insights para otimizar suas operações financeiras."
+        },
+        "support": {
+          "title": "Suporte 24/7",
+          "description": "Equipe especializada disponível a qualquer momento para garantir que suas operações nunca parem."
+        },
+        "cards": {
+          "title": "Múltiplas Bandeiras",
+          "description": "Suporte completo para Mastercard, American Express e Unionpay e outras bandeiras nacionais e internacionais."
+        }
+      }
+    },
+    "benefits": {
+      "title": "Benefícios Comprovados",
+      "subtitle": "Empresas que escolhem nossa processadora de cartões experimentam resultados excepcionais.",
+      "items": {
+        "costs": {
+          "title": "Redução de Custos",
+          "description": "Diminua significativamente as taxas de processamento com nossa tecnologia otimizada e parcerias estratégicas.",
+          "metric": "Até 80% de economia"
+        },
+        "conversion": {
+          "title": "Aumento da Conversão",
+          "description": "Melhore a taxa de aprovação de transações com nosso sistema inteligente de roteamento e análise de risco.",
+          "metric": "Até 99% de aprovação"
+        },
+        "integration": {
+          "title": "Integração Rápida",
+          "description": "APIs bem documentadas e SDKs prontos para uso em principais linguagens de programação.",
+          "metric": "Integração e simulador disponível em 24 horas."
+        }
+      }
+    },
+    "technology": {
+      "title": "Tecnologia de Última Geração",
+      "subtitle": "Nossa infraestrutura foi desenvolvida para suportar o volume de transações das maiores empresas do mundo, garantindo performance e estabilidade incomparáveis.",
+      "features": {
+        "cloud": {
+          "title": "Arquitetura em Nuvem",
+          "description": "Infraestrutura distribuída em múltiplas regiões para máxima disponibilidade."
+        },
+        "ml": {
+          "title": "Machine Learning",
+          "description": "Algoritmos inteligentes para detecção de fraudes e otimização de aprovações."
+        },
+        "apis": {
+          "title": "APIs RESTful",
+          "description": "Integração simples e documentação completa para desenvolvedores."
+        }
+      }
+    },
+    "stats": {
+      "title": "Números que Impressionam",
+      "items": {
+        "transactions": "Transações por dia",
+        "uptime": "Uptime garantido",
+        "responseTime": "Tempo de resposta",
+        "companies": "Empresas confiam"
+      }
+    }
+  },
+  "cookies": {
+    "banner": {
+      "title": "Usamos cookies",
+      "description": "Utilizamos cookies para melhorar sua experiência em nosso site e fornecer serviços personalizados. Ao continuar usando nosso site, você concorda com nossa política de cookies.",
+      "acceptAll": "Aceitar todos",
+      "rejectAll": "Recusar todos",
+      "customize": "Personalizar"
+    },
+    "settings": {
+      "title": "Configurações de Cookies",
+      "description": "Você pode configurar quais cookies deseja permitir em nosso site.",
+      "necessary": {
+        "title": "Cookies Necessários",
+        "description": "Estes cookies são essenciais para o funcionamento adequado do site e não podem ser desabilitados."
+      },
+      "analytics": {
+        "title": "Cookies de Análise",
+        "description": "Estes cookies nos ajudam a entender como os visitantes interagem com nosso site."
+      },
+      "marketing": {
+        "title": "Cookies de Marketing",
+        "description": "Estes cookies são usados para fornecer anúncios relevantes para você."
+      },
+      "save": "Salvar preferências",
+      "acceptAll": "Aceitar todos",
+      "rejectAll": "Recusar todos"
+    },
+    "icon": {
+      "tooltip": "Configurações de Cookies"
+    }
+  }
 }

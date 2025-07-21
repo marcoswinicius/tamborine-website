@@ -2,10 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Mail, Phone, Clock, MapPin, MessageSquare, Users, Headphones, Handshake, Shield, Send, Linkedin, Instagram } from 'lucide-react';
+import { useTranslations } from 'next-intl';
+import { Mail, Phone, Clock, MapPin, MessageSquare, Users, Headphones, Handshake, Shield, Send, Linkedin, Instagram, AlertCircle } from 'lucide-react';
 import BackgroundSquares from '@/app/components/ui/BackgroundSquares';
 
 export default function ContatoPage() {
+  const t = useTranslations('contact');
+  
   const [formData, setFormData] = useState({
     nome: '',
     email: '',
@@ -17,27 +20,28 @@ export default function ContatoPage() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const contactOptions = [
     {
       icon: Users,
-      title: "Quero ser cliente",
-      description: "Descubra como nossas soluções podem impulsionar seu negócio",
-      email: "contato@tamborine.com.br",
+      title: t('contactOptions.options.client.title'),
+      description: t('contactOptions.options.client.description'),
+      email: t('contactOptions.options.client.email'),
       color: "primary"
     },
     {
       icon: Headphones,
-      title: "Suporte técnico",
-      description: "Precisa de ajuda com nossa plataforma ou APIs?",
-      email: "suporte@tamborine.com.br",
+      title: t('contactOptions.options.support.title'),
+      description: t('contactOptions.options.support.description'),
+      email: t('contactOptions.options.support.email'),
       color: "blue"
     },
     {
       icon: Handshake,
-      title: "Parcerias comerciais",
-      description: "Vamos construir o futuro dos pagamentos juntos",
-      email: "parcerias@tamborine.com.br",
+      title: t('contactOptions.options.partnerships.title'),
+      description: t('contactOptions.options.partnerships.description'),
+      email: t('contactOptions.options.partnerships.email'),
       color: "green"
     }
   ];
@@ -53,10 +57,24 @@ export default function ContatoPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setErrorMessage('');
     
     try {
-      // Simular envio do formulário
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Erro ao enviar mensagem');
+      }
+
       setSubmitStatus('success');
       setFormData({
         nome: '',
@@ -66,8 +84,10 @@ export default function ContatoPage() {
         assunto: '',
         mensagem: ''
       });
-    } catch {
+    } catch (error) {
+      console.error('Erro ao enviar formulário:', error);
       setSubmitStatus('error');
+      setErrorMessage(error instanceof Error ? error.message : 'Erro ao enviar mensagem. Tente novamente.');
     } finally {
       setIsSubmitting(false);
     }
@@ -93,18 +113,18 @@ export default function ContatoPage() {
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
                 <span className="bg-[var(--color-primary)] text-[var(--color-dark-green)] font-medium px-3 py-1 rounded-full text-xs">
-                  Fale Conosco
+                  {t('badge')}
                 </span>
-                <span className="text-white">Estamos aqui para ajudar</span>
+                <span className="text-white">{t('badgeSubtitle')}</span>
               </motion.div>
 
               <motion.h1 
-                className="text-4xl md:text-6xl lg:text-7xl font-bold title-gradient-hero mb-6"
+                className="text-4xl md:text-6xl lg:text-7xl  title-gradient-hero mb-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Entre em <span className="no-gradient">Contato</span>
+                {t('title.part1')} <span className="no-gradient">{t('title.part2')}</span>
               </motion.h1>
 
               <motion.p 
@@ -113,8 +133,7 @@ export default function ContatoPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                Na Tamborine, estamos prontos para ajudar você a transformar o futuro dos serviços financeiros. 
-                Entre em contato com nossa equipe para dúvidas, parcerias ou suporte técnico.
+                {t('subtitle')}
               </motion.p>
 
               {/* Contact Info Cards */}
@@ -128,7 +147,7 @@ export default function ContatoPage() {
                   <div className="flex items-center gap-3">
                     <Mail className="w-5 h-5 text-[var(--color-primary)]" />
                     <div>
-                      <p className="text-white font-medium text-sm">E-mail</p>
+                      <p className="text-white font-medium text-sm">{t('info.email')}</p>
                       <p className="text-white/80 text-xs">contato@tamborine.com.br</p>
                     </div>
                   </div>
@@ -138,7 +157,7 @@ export default function ContatoPage() {
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-[var(--color-primary)]" />
                     <div>
-                      <p className="text-white font-medium text-sm">Telefone</p>
+                      <p className="text-white font-medium text-sm">{t('info.phone')}</p>
                       <p className="text-white/80 text-xs">(11) 3000-1234</p>
                     </div>
                   </div>
@@ -148,7 +167,7 @@ export default function ContatoPage() {
                   <div className="flex items-center gap-3">
                     <MessageSquare className="w-5 h-5 text-[var(--color-primary)]" />
                     <div>
-                      <p className="text-white font-medium text-sm">WhatsApp</p>
+                      <p className="text-white font-medium text-sm">{t('info.whatsapp')}</p>
                       <p className="text-white/80 text-xs">(11) 99999-1234</p>
                     </div>
                   </div>
@@ -158,7 +177,7 @@ export default function ContatoPage() {
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-[var(--color-primary)]" />
                     <div>
-                      <p className="text-white font-medium text-sm">Horário</p>
+                      <p className="text-white font-medium text-sm">{t('info.hours')}</p>
                       <p className="text-white/80 text-xs">Seg a Sex, 9h às 18h</p>
                     </div>
                   </div>
@@ -174,8 +193,8 @@ export default function ContatoPage() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="mb-6">
-                <h2 className="text-2xl font-bold text-white mb-2">Entre em Contato Conosco</h2>
-                <p className="text-white/80">Preencha o formulário e nossa equipe entrará em contato em até 24 horas.</p>
+                <h2 className="text-2xl  text-white mb-2">{t('form.title')}</h2>
+                <p className="text-white/80">{t('form.subtitle')}</p>
               </div>
 
               {submitStatus === 'success' ? (
@@ -183,13 +202,27 @@ export default function ContatoPage() {
                   <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
                     <Send className="w-8 h-8 text-green-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">Mensagem enviada com sucesso!</h3>
-                  <p className="text-white/80 mb-4">Nossa equipe entrará em contato em até 24 horas.</p>
+                  <h3 className="text-xl font-semibold text-white mb-3">{t('form.success.title')}</h3>
+                  <p className="text-white/80 mb-4">{t('form.success.description')}</p>
                   <button 
                     onClick={() => setSubmitStatus('idle')}
                     className="button px-6 py-3 text-sm"
                   >
-                    Enviar nova mensagem
+                    {t('form.success.newMessage')}
+                  </button>
+                </div>
+              ) : submitStatus === 'error' ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-4">
+                    <AlertCircle className="w-8 h-8 text-red-400" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">Erro ao enviar mensagem</h3>
+                  <p className="text-white/80 mb-4">{errorMessage}</p>
+                  <button 
+                    onClick={() => setSubmitStatus('idle')}
+                    className="button px-6 py-3 text-sm"
+                  >
+                    Tentar novamente
                   </button>
                 </div>
               ) : (
@@ -197,7 +230,7 @@ export default function ContatoPage() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="nome" className="block text-white font-medium mb-1 text-sm">
-                        Nome completo *
+                        {t('form.fields.name')} {t('form.fields.required')}
                       </label>
                       <input
                         type="text"
@@ -207,13 +240,13 @@ export default function ContatoPage() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-[var(--color-primary)] focus:outline-none transition-colors text-sm"
-                        placeholder="Seu nome completo"
+                        placeholder={t('form.fields.namePlaceholder')}
                       />
                     </div>
 
                     <div>
                       <label htmlFor="email" className="block text-white font-medium mb-1 text-sm">
-                        E-mail corporativo *
+                        {t('form.fields.email')} {t('form.fields.required')}
                       </label>
                       <input
                         type="email"
@@ -223,7 +256,7 @@ export default function ContatoPage() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-[var(--color-primary)] focus:outline-none transition-colors text-sm"
-                        placeholder="seu@email.com.br"
+                        placeholder={t('form.fields.emailPlaceholder')}
                       />
                     </div>
                   </div>
@@ -231,7 +264,7 @@ export default function ContatoPage() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label htmlFor="cnpj" className="block text-white font-medium mb-1 text-sm">
-                        CNPJ
+                        {t('form.fields.cnpj')}
                       </label>
                       <input
                         type="text"
@@ -240,13 +273,13 @@ export default function ContatoPage() {
                         value={formData.cnpj}
                         onChange={handleInputChange}
                         className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-[var(--color-primary)] focus:outline-none transition-colors text-sm"
-                        placeholder="00.000.000/0000-00"
+                        placeholder={t('form.fields.cnpjPlaceholder')}
                       />
                     </div>
 
                     <div>
                       <label htmlFor="telefone" className="block text-white font-medium mb-1 text-sm">
-                        Telefone com DDD *
+                        {t('form.fields.phone')} {t('form.fields.required')}
                       </label>
                       <input
                         type="tel"
@@ -256,14 +289,14 @@ export default function ContatoPage() {
                         onChange={handleInputChange}
                         required
                         className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-[var(--color-primary)] focus:outline-none transition-colors text-sm"
-                        placeholder="(11) 99999-9999"
+                        placeholder={t('form.fields.phonePlaceholder')}
                       />
                     </div>
                   </div>
 
                   <div>
                     <label htmlFor="assunto" className="block text-white font-medium mb-1 text-sm">
-                      Assunto *
+                      {t('form.fields.subject')} {t('form.fields.required')}
                     </label>
                     <select
                       id="assunto"
@@ -273,18 +306,18 @@ export default function ContatoPage() {
                       required
                       className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white focus:border-[var(--color-primary)] focus:outline-none transition-colors text-sm"
                     >
-                      <option value="">Selecione um assunto</option>
-                      <option value="comercial">Interesse comercial</option>
-                      <option value="suporte">Suporte técnico</option>
-                      <option value="parcerias">Parcerias</option>
-                      <option value="imprensa">Imprensa</option>
-                      <option value="outros">Outros</option>
+                      <option value="">{t('form.fields.subjectPlaceholder')}</option>
+                      <option value="comercial">{t('form.subjects.commercial')}</option>
+                      <option value="suporte">{t('form.subjects.support')}</option>
+                      <option value="parcerias">{t('form.subjects.partnerships')}</option>
+                      <option value="imprensa">{t('form.subjects.press')}</option>
+                      <option value="outros">{t('form.subjects.others')}</option>
                     </select>
                   </div>
 
                   <div>
                     <label htmlFor="mensagem" className="block text-white font-medium mb-1 text-sm">
-                      Mensagem *
+                      {t('form.fields.message')} {t('form.fields.required')}
                     </label>
                     <textarea
                       id="mensagem"
@@ -294,7 +327,7 @@ export default function ContatoPage() {
                       required
                       rows={4}
                       className="w-full px-3 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:border-[var(--color-primary)] focus:outline-none transition-colors resize-vertical text-sm"
-                      placeholder="Conte-nos como podemos ajudar..."
+                      placeholder={t('form.fields.messagePlaceholder')}
                     />
                   </div>
 
@@ -302,7 +335,7 @@ export default function ContatoPage() {
                     <div className="flex items-start gap-2">
                       <Shield className="w-4 h-4 text-[var(--color-primary)] mt-0.5 flex-shrink-0" />
                       <p className="text-white/90 text-xs">
-                        <strong>Seus dados estão protegidos.</strong> Utilizamos criptografia e seguimos rigorosos padrões de segurança.
+                        <strong>{t('form.privacy.title')}</strong> {t('form.privacy.description')}
                       </p>
                     </div>
                   </div>
@@ -315,12 +348,12 @@ export default function ContatoPage() {
                     {isSubmitting ? (
                       <>
                         <div className="w-4 h-4 border-2 border-[var(--color-dark-green)] border-t-transparent rounded-full animate-spin" />
-                        Enviando...
+                        {t('form.submitting')}
                       </>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        Enviar Mensagem
+                        {t('form.submit')}
                       </>
                     )}
                   </button>
@@ -341,11 +374,11 @@ export default function ContatoPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
-              Para Quem é Sua <span className="no-gradient">Mensagem?</span>
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
+              {t('contactOptions.title.part1')} <span className="no-gradient">{t('contactOptions.title.part2')}</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
-              Direcionamos sua mensagem para a equipe certa, garantindo uma resposta mais rápida e precisa.
+              {t('contactOptions.subtitle')}
             </p>
           </motion.div>
 
@@ -386,11 +419,11 @@ export default function ContatoPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold title-gradient-hero mb-6">
-                Siga-nos nas <span className="no-gradient">Redes Sociais</span>
+              <h2 className="text-3xl md:text-4xl  title-gradient-hero mb-6">
+                {t('socialMedia.title.part1')} <span className="no-gradient">{t('socialMedia.title.part2')}</span>
               </h2>
               <p className="text-lg text-gradient-hero mb-8">
-                Acompanhe as últimas novidades, insights do mercado financeiro e atualizações sobre nossos produtos.
+                {t('socialMedia.subtitle')}
               </p>
 
               <div className="flex gap-4">
@@ -419,7 +452,7 @@ export default function ContatoPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-white mb-6">Informações Adicionais</h3>
+              <h3 className="text-2xl  text-white mb-6">{t('additionalInfo.title')}</h3>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -427,9 +460,9 @@ export default function ContatoPage() {
                     <Clock className="w-5 h-5 text-[var(--color-primary)]" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Horário de Atendimento</h4>
-                    <p className="text-white/80">Segunda a sexta-feira, das 9h às 18h</p>
-                    <p className="text-white/60 text-sm">Exceto feriados nacionais</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">{t('additionalInfo.businessHours.title')}</h4>
+                    <p className="text-white/80">{t('additionalInfo.businessHours.description')}</p>
+                    <p className="text-white/60 text-sm">{t('additionalInfo.businessHours.note')}</p>
                   </div>
                 </div>
 
@@ -438,9 +471,9 @@ export default function ContatoPage() {
                     <Shield className="w-5 h-5 text-[var(--color-primary)]" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Certificações</h4>
-                    <p className="text-white/80">PCI DSS Level 1 certificado</p>
-                    <p className="text-white/60 text-sm">Máxima segurança para seus dados</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">{t('additionalInfo.certifications.title')}</h4>
+                    <p className="text-white/80">{t('additionalInfo.certifications.description')}</p>
+                    <p className="text-white/60 text-sm">{t('additionalInfo.certifications.note')}</p>
                   </div>
                 </div>
 
@@ -449,9 +482,9 @@ export default function ContatoPage() {
                     <MapPin className="w-5 h-5 text-[var(--color-primary)]" />
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Operação</h4>
-                    <p className="text-white/80">100% digital e remota</p>
-                    <p className="text-white/60 text-sm">Atendimento em todo o Brasil</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">{t('additionalInfo.operation.title')}</h4>
+                    <p className="text-white/80">{t('additionalInfo.operation.description')}</p>
+                    <p className="text-white/60 text-sm">{t('additionalInfo.operation.note')}</p>
                   </div>
                 </div>
               </div>

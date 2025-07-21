@@ -113,7 +113,7 @@ export default function Tos() {
           </motion.div>
 
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold title-gradient-hero mb-6 max-w-5xl"
+            className="text-4xl md:text-6xl lg:text-7xl  title-gradient-hero mb-6 max-w-5xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -157,7 +157,7 @@ export default function Tos() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               APIs <span className="no-gradient">Poderosas</span> e Flexíveis
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -197,7 +197,7 @@ export default function Tos() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+              <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
                 Endpoints <span className="no-gradient">Principais</span>
               </h2>
               <p className="text-lg text-gradient-hero mb-8">
@@ -241,7 +241,7 @@ export default function Tos() {
               <div className="bg-gradient-to-br from-[var(--color-primary)]/20 to-transparent rounded-2xl p-8">
                 <div className="relative aspect-square max-w-md mx-auto">
                   <Image
-                    src="/icon/api.svg"
+                    src="/images/solutions/apis.png"
                     alt="API Integration"
                     fill
                     className="object-contain"
@@ -263,7 +263,7 @@ export default function Tos() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Tamborine <span className="no-gradient">Operation System</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -286,7 +286,7 @@ export default function Tos() {
                   <div className="w-16 h-16 rounded-xl bg-[var(--color-primary)]/30 flex items-center justify-center mx-auto mb-4">
                     <feature.icon className="w-8 h-8 text-[var(--color-primary)]" />
                   </div>
-                  <div className="text-2xl font-bold text-[var(--color-primary)] mb-2">
+                  <div className="text-2xl  text-[var(--color-primary)] mb-2">
                     {feature.metric}
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
@@ -333,7 +333,7 @@ export default function Tos() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Processo de <span className="no-gradient">Integração</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -373,7 +373,7 @@ export default function Tos() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[var(--color-primary)]/20 rounded-2xl p-6 mb-4">
-                  <div className="text-3xl font-bold text-[var(--color-primary)] mb-4">
+                  <div className="text-3xl  text-[var(--color-primary)] mb-4">
                     {step.step}
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-3">{step.title}</h3>
@@ -395,7 +395,7 @@ export default function Tos() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+              <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
                 Implementação <span className="no-gradient">Simples</span>
               </h2>
               <p className="text-lg text-gradient-hero mb-8">

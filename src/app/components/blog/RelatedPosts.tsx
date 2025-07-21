@@ -18,7 +18,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
   return (
     <section className="max-w-4xl mx-auto px-4 py-16">
       <motion.h2 
-        className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center"
+        className="text-3xl  text-gray-900 dark:text-white mb-12 text-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -63,7 +63,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
               </div>
               
               <Link href={`/blog/${post.slug}`}>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 hover:text-[var(--color-primary)] transition-colors line-clamp-2 leading-tight">
+                <h3 className="text-lg  text-gray-900 dark:text-white mb-2 hover:text-[var(--color-primary)] transition-colors line-clamp-2 leading-tight">
                   {post.title}
                 </h3>
               </Link>

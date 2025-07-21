@@ -5,56 +5,59 @@ import Image from 'next/image';
 import { CreditCard, Shield, Zap, Globe, BarChart3, Clock } from 'lucide-react';
 import BackgroundSquares from '@/app/components/ui/BackgroundSquares';
 import CTA from '@/app/components/CTA';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 
 export default function ProcessadoraDeCartoesPage() {
+  const t = useTranslations('cardProcessorPage');
   const features = [
     {
       icon: Shield,
-      title: "Segurança Avançada",
-      description: "Tecnologia de ponta com criptografia de última geração e conformidade com PCI-DSS para máxima proteção de dados."
+      title: t('features.items.security.title'),
+      description: t('features.items.security.description')
     },
     {
       icon: Zap,
-      title: "Processamento Instantâneo",
-      description: "Transações processadas em milissegundos com 99,99% de disponibilidade para garantir a melhor experiência do usuário."
+      title: t('features.items.processing.title'),
+      description: t('features.items.processing.description')
     },
     {
       icon: Globe,
-      title: "Cobertura Global",
-      description: "Aceite pagamentos de qualquer lugar do mundo com suporte a múltiplas moedas e bandeiras de cartão."
+      title: t('features.items.global.title'),
+      description: t('features.items.global.description')
     },
     {
       icon: BarChart3,
-      title: "Analytics Avançado",
-      description: "Dashboard em tempo real com relatórios detalhados e insights para otimizar suas operações financeiras."
+      title: t('features.items.analytics.title'),
+      description: t('features.items.analytics.description')
     },
     {
       icon: Clock,
-      title: "Suporte 24/7",
-      description: "Equipe especializada disponível a qualquer momento para garantir que suas operações nunca parem."
+      title: t('features.items.support.title'),
+      description: t('features.items.support.description')
     },
     {
       icon: CreditCard,
-      title: "Múltiplas Bandeiras",
-      description: "Suporte completo para Visa, Mastercard, Elo, American Express e outras bandeiras nacionais e internacionais."
+      title: t('features.items.cards.title'),
+      description: t('features.items.cards.description')
     }
   ];
 
   const benefits = [
     {
-      title: "Redução de Custos",
-      description: "Diminua significativamente as taxas de processamento com nossa tecnologia otimizada e parcerias estratégicas.",
-      metric: "Até 40% de economia"
+      title: t('benefits.items.costs.title'),
+      description: t('benefits.items.costs.description'),
+      metric: t('benefits.items.costs.metric')
     },
     {
-      title: "Aumento da Conversão",
-      description: "Melhore a taxa de aprovação de transações com nosso sistema inteligente de roteamento e análise de risco.",
-      metric: "95% de aprovação"
+      title: t('benefits.items.conversion.title'),
+      description: t('benefits.items.conversion.description'),
+      metric: t('benefits.items.conversion.metric')
     },
     {
-      title: "Integração Rápida",
-      description: "APIs bem documentadas e SDKs prontos para uso em principais linguagens de programação.",
-      metric: "Integração em 48h"
+      title: t('benefits.items.integration.title'),
+      description: t('benefits.items.integration.description'),
+      metric: t('benefits.items.integration.metric')
     }
   ];
 
@@ -76,18 +79,18 @@ export default function ProcessadoraDeCartoesPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <span className="bg-[var(--color-primary)] text-[var(--color-dark-green)] font-medium px-3 py-1 rounded-full text-xs">
-              Processamento Avançado
+              {t('hero.badge.highlight')}
             </span>
-            <span className="text-white">Tecnologia de ponta para pagamentos</span>
+            <span className="text-white">{t('hero.badge.description')}</span>
           </motion.div>
 
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold title-gradient-hero mb-6 max-w-5xl"
+            className="text-4xl md:text-6xl lg:text-7xl  title-gradient-hero mb-6 max-w-5xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Processadora de <span className="no-gradient">Cartões</span> de Alta Performance
+            {t('hero.title')}
           </motion.h1>
 
           <motion.p 
@@ -96,8 +99,7 @@ export default function ProcessadoraDeCartoesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Processe pagamentos com cartões de crédito e débito utilizando a tecnologia mais avançada do mercado. 
-            Segurança máxima, velocidade incomparável e confiabilidade comprovada.
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.div 
@@ -106,12 +108,11 @@ export default function ProcessadoraDeCartoesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <button className="button px-8 py-4 text-lg font-medium">
-              Teste Grátis por 30 dias
-            </button>
-            <button className="px-8 py-4 text-lg font-medium border border-[var(--color-primary)] rounded-full text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-colors">
-              Falar com Especialista
-            </button>
+            <Link href="/contact">
+              <button className="button px-8 py-4 text-lg font-medium">
+                {t('hero.cta')}
+              </button>
+            </Link>
           </motion.div>
         </motion.div>
       </section>
@@ -126,12 +127,11 @@ export default function ProcessadoraDeCartoesPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
-              Recursos que <span className="no-gradient">Revolucionam</span> Pagamentos
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
+              {t('features.title')}
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
-              Nossa plataforma oferece todos os recursos necessários para processar pagamentos 
-              de forma segura, rápida e eficiente.
+              {t('features.subtitle')}
             </p>
           </motion.div>
 
@@ -166,11 +166,11 @@ export default function ProcessadoraDeCartoesPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
-              Benefícios <span className="no-gradient">Comprovados</span>
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
+              {t('benefits.title')}
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
-              Empresas que escolhem nossa processadora de cartões experimentam resultados excepcionais.
+              {t('benefits.subtitle')}
             </p>
           </motion.div>
 
@@ -185,7 +185,7 @@ export default function ProcessadoraDeCartoesPage() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[var(--color-primary)]/20 rounded-2xl p-8 mb-6">
-                  <div className="text-3xl font-bold text-[var(--color-primary)] mb-2">
+                  <div className="text-3xl  text-[var(--color-primary)] mb-2">
                     {benefit.metric}
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
@@ -207,12 +207,11 @@ export default function ProcessadoraDeCartoesPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
-                Tecnologia de <span className="no-gradient">Última Geração</span>
+              <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
+                {t('technology.title')}
               </h2>
               <p className="text-lg text-gradient-hero mb-8">
-                Nossa infraestrutura foi desenvolvida para suportar o volume de transações das maiores empresas 
-                do mundo, garantindo performance e estabilidade incomparáveis.
+                {t('technology.subtitle')}
               </p>
               
               <div className="space-y-6">
@@ -221,8 +220,8 @@ export default function ProcessadoraDeCartoesPage() {
                     <div className="w-2 h-2 rounded-full bg-[var(--color-dark-green)]"></div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Arquitetura em Nuvem</h4>
-                    <p className="text-white/80">Infraestrutura distribuída em múltiplas regiões para máxima disponibilidade.</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">{t('technology.features.cloud.title')}</h4>
+                    <p className="text-white/80">{t('technology.features.cloud.description')}</p>
                   </div>
                 </div>
                 
@@ -231,8 +230,8 @@ export default function ProcessadoraDeCartoesPage() {
                     <div className="w-2 h-2 rounded-full bg-[var(--color-dark-green)]"></div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">Machine Learning</h4>
-                    <p className="text-white/80">Algoritmos inteligentes para detecção de fraudes e otimização de aprovações.</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">{t('technology.features.ml.title')}</h4>
+                    <p className="text-white/80">{t('technology.features.ml.description')}</p>
                   </div>
                 </div>
                 
@@ -241,8 +240,8 @@ export default function ProcessadoraDeCartoesPage() {
                     <div className="w-2 h-2 rounded-full bg-[var(--color-dark-green)]"></div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-semibold text-white mb-2">APIs RESTful</h4>
-                    <p className="text-white/80">Integração simples e documentação completa para desenvolvedores.</p>
+                    <h4 className="text-lg font-semibold text-white mb-2">{t('technology.features.apis.title')}</h4>
+                    <p className="text-white/80">{t('technology.features.apis.description')}</p>
                   </div>
                 </div>
               </div>
@@ -258,7 +257,7 @@ export default function ProcessadoraDeCartoesPage() {
               <div className="bg-gradient-to-br from-[var(--color-primary)]/20 to-transparent rounded-2xl p-8">
                 <div className="relative aspect-square max-w-md mx-auto">
                   <Image
-                    src="/icon/card-process.svg"
+                    src="/images/solutions/cardProcessor.png"
                     alt="Processamento de Cartões"
                     fill
                     className="object-contain"
@@ -280,17 +279,17 @@ export default function ProcessadoraDeCartoesPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
-              Números que <span className="no-gradient">Impressionam</span>
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
+              {t('stats.title')}
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { number: "1M+", label: "Transações por dia" },
-              { number: "99.99%", label: "Uptime garantido" },
-              { number: "150ms", label: "Tempo de resposta" },
-              { number: "500+", label: "Empresas confiam" }
+              { number: "1M+", label: t('stats.items.transactions') },
+              { number: "99.99%", label: t('stats.items.uptime') },
+              { number: "150ms", label: t('stats.items.responseTime') },
+              { number: "500+", label: t('stats.items.companies') }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -300,7 +299,7 @@ export default function ProcessadoraDeCartoesPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-2">
+                <div className="text-4xl md:text-5xl  text-[var(--color-primary)] mb-2">
                   {stat.number}
                 </div>
                 <div className="text-white/80">{stat.label}</div>

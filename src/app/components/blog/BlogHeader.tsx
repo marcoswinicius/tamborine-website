@@ -30,7 +30,7 @@ export default function BlogHeader({ selectedCategory }: BlogHeaderProps) {
           transition={{ duration: 0.6 }}
         >
           <motion.h1 
-            className="text-4xl md:text-6xl font-bold mb-4 title-gradient-hero"
+            className="text-4xl md:text-6xl  mb-4 title-gradient-hero"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

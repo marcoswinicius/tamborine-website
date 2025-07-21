@@ -119,7 +119,7 @@ export default function About() {
           </motion.div>
 
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold title-gradient-hero mb-6 max-w-5xl"
+            className="text-4xl md:text-6xl lg:text-7xl  title-gradient-hero mb-6 max-w-5xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -149,7 +149,7 @@ export default function About() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+              <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
                 Quem <span className="no-gradient">Somos</span>
               </h2>
               <p className="text-lg text-gradient-hero mb-6">
@@ -207,7 +207,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Missão e <span className="no-gradient">Visão</span>
             </h2>
           </motion.div>
@@ -264,7 +264,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Nossa <span className="no-gradient">História</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -283,7 +283,7 @@ export default function About() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[var(--color-primary)]/20 rounded-2xl p-6 mb-4">
-                  <div className="text-3xl font-bold text-[var(--color-primary)] mb-3">
+                  <div className="text-3xl  text-[var(--color-primary)] mb-3">
                     {milestone.year}
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-3">{milestone.title}</h3>
@@ -305,7 +305,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Nossos <span className="no-gradient">Valores</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -344,7 +344,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Produtos e <span className="no-gradient">Serviços</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -380,7 +380,7 @@ export default function About() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Nossas <span className="no-gradient">Conquistas</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -399,7 +399,7 @@ export default function About() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[var(--color-primary)]/20 rounded-2xl p-6 mb-4">
-                  <div className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-2">
+                  <div className="text-3xl md:text-4xl  text-[var(--color-primary)] mb-2">
                     {achievement.number}
                   </div>
                   <div className="text-lg font-semibold text-white mb-2">{achievement.label}</div>

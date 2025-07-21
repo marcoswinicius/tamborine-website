@@ -30,7 +30,7 @@ export const menuItems: MenuItem[] = [
         href: "/processadora-de-cartoes",
         descriptionKey: "products.items.cardProcessor.description",
         icon: CircuitBoard,
-        image: "/images/operation-system.png"
+        image: "/images/solutions/cardProcessor.png"
       },
       {
         id: "product-2",
@@ -38,7 +38,7 @@ export const menuItems: MenuItem[] = [
         href: "/gateway-de-pagamento",
         descriptionKey: "products.items.paymentGateway.description",
         icon: ArrowLeftRight,
-        image: "/images/solutions/paymentGateway.jpg"
+        image: "/images/solutions/paymentGateway.png"
       },
       {
         id: "product-3",
@@ -46,7 +46,7 @@ export const menuItems: MenuItem[] = [
         href: "/tos",
         descriptionKey: "products.items.apis.description",
         icon: Webhook,
-        image: "/images/solutions/apis.jpg"
+        image: "/images/solutions/apis.png"
       },
       {
         id: "product-4",
@@ -54,7 +54,7 @@ export const menuItems: MenuItem[] = [
         href: "/bin-sponsor-e-emissao-de-cartoes",
         descriptionKey: "products.items.binSponsor.description",
         icon: CreditCard,
-        image: "/images/solutions/binSponsor.jpg"
+        image:  "/images/solutions/binSponsor.png"
       },
     ]
   },

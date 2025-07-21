@@ -128,7 +128,7 @@ export default function GatewayDePagamentoPage() {
           </motion.div>
 
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold title-gradient-hero mb-6 max-w-5xl"
+            className="text-4xl md:text-6xl lg:text-7xl  title-gradient-hero mb-6 max-w-5xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -172,7 +172,7 @@ export default function GatewayDePagamentoPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Recursos que <span className="no-gradient">Impulsionam</span> Vendas
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -212,7 +212,7 @@ export default function GatewayDePagamentoPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Métodos de <span className="no-gradient">Pagamento</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -258,7 +258,7 @@ export default function GatewayDePagamentoPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+              <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
                 Experiência de <span className="no-gradient">Checkout</span> Perfeita
               </h2>
               <p className="text-lg text-gradient-hero mb-8">
@@ -331,7 +331,7 @@ export default function GatewayDePagamentoPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Resultados <span className="no-gradient">Comprovados</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -351,7 +351,7 @@ export default function GatewayDePagamentoPage() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[var(--color-primary)]/20 rounded-2xl p-8 mb-6">
-                  <div className="text-3xl font-bold text-[var(--color-primary)] mb-2">
+                  <div className="text-3xl  text-[var(--color-primary)] mb-2">
                     {benefit.metric}
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
@@ -373,7 +373,7 @@ export default function GatewayDePagamentoPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Integração <span className="no-gradient">Simplificada</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -392,7 +392,7 @@ export default function GatewayDePagamentoPage() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[var(--color-primary)]/20 rounded-2xl p-6 mb-4">
-                  <div className="text-3xl font-bold text-[var(--color-primary)] mb-4">
+                  <div className="text-3xl  text-[var(--color-primary)] mb-4">
                     {step.step}
                   </div>
                   <h3 className="text-lg font-semibold text-white mb-3">{step.title}</h3>
@@ -414,7 +414,7 @@ export default function GatewayDePagamentoPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Performance <span className="no-gradient">Excepcional</span>
             </h2>
           </motion.div>
@@ -434,7 +434,7 @@ export default function GatewayDePagamentoPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-2">
+                <div className="text-4xl md:text-5xl  text-[var(--color-primary)] mb-2">
                   {stat.number}
                 </div>
                 <div className="text-white/80">{stat.label}</div>

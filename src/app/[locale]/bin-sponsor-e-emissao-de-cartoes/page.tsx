@@ -144,7 +144,7 @@ export default function BinSponsorEmissaoCartoesPage() {
           </motion.div>
 
           <motion.h1 
-            className="text-4xl md:text-6xl lg:text-7xl font-bold title-gradient-hero mb-6 max-w-5xl"
+            className="text-4xl md:text-6xl lg:text-7xl  title-gradient-hero mb-6 max-w-5xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -188,7 +188,7 @@ export default function BinSponsorEmissaoCartoesPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Tipos de <span className="no-gradient">Cartões</span> Disponíveis
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -228,7 +228,7 @@ export default function BinSponsorEmissaoCartoesPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Recursos <span className="no-gradient">Avançados</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -287,7 +287,7 @@ export default function BinSponsorEmissaoCartoesPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+              <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
                 Design <span className="no-gradient">Personalizado</span>
               </h2>
               <p className="text-lg text-gradient-hero mb-8">
@@ -341,7 +341,7 @@ export default function BinSponsorEmissaoCartoesPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Vantagens <span className="no-gradient">Competitivas</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -361,7 +361,7 @@ export default function BinSponsorEmissaoCartoesPage() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[var(--color-primary)]/20 rounded-2xl p-8 mb-6">
-                  <div className="text-2xl font-bold text-[var(--color-primary)] mb-2">
+                  <div className="text-2xl  text-[var(--color-primary)] mb-2">
                     {benefit.metric}
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
@@ -383,7 +383,7 @@ export default function BinSponsorEmissaoCartoesPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Processo de <span className="no-gradient">Implementação</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -403,7 +403,7 @@ export default function BinSponsorEmissaoCartoesPage() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[var(--color-primary)]/20 rounded-2xl p-4 mb-4">
-                  <div className="text-2xl font-bold text-[var(--color-primary)] mb-3">
+                  <div className="text-2xl  text-[var(--color-primary)] mb-3">
                     {step.step}
                   </div>
                   <h3 className="text-sm font-semibold text-white mb-3">{step.title}</h3>
@@ -425,7 +425,7 @@ export default function BinSponsorEmissaoCartoesPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+              <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
                 Gestão <span className="no-gradient">Completa</span>
               </h2>
               <p className="text-lg text-gradient-hero mb-8">
@@ -482,7 +482,7 @@ export default function BinSponsorEmissaoCartoesPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Números que <span className="no-gradient">Comprovam</span> Nossa Excelência
             </h2>
           </motion.div>
@@ -502,7 +502,7 @@ export default function BinSponsorEmissaoCartoesPage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-2">
+                <div className="text-4xl md:text-5xl  text-[var(--color-primary)] mb-2">
                   {stat.number}
                 </div>
                 <div className="text-white/80">{stat.label}</div>

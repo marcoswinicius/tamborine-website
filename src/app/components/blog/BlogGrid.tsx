@@ -74,7 +74,7 @@ export default function BlogGrid({ currentPage, selectedCategory }: BlogGridProp
             </div>
             
             <Link href={`/blog/${post.slug}`}>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-[var(--color-primary)] transition-colors line-clamp-2 leading-tight">
+              <h3 className="text-xl  text-gray-900 dark:text-white mb-3 hover:text-[var(--color-primary)] transition-colors line-clamp-2 leading-tight">
                 {post.title}
               </h3>
             </Link>

@@ -40,7 +40,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
         
         {/* Sample additional content - in a real app this would come from your CMS */}
         <motion.h2 
-          className="text-3xl font-bold mt-8 mb-6 text-gray-900 dark:text-white"
+          className="text-3xl  mt-8 mb-6 text-gray-900 dark:text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -72,7 +72,7 @@ export default function BlogPostContent({ post }: BlogPostContentProps) {
         </motion.ul>
         
         <motion.h2 
-          className="text-3xl font-bold mt-8 mb-6 text-gray-900 dark:text-white"
+          className="text-3xl  mt-8 mb-6 text-gray-900 dark:text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}

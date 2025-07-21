@@ -1,4 +1,3 @@
-import { Space_Grotesk } from "next/font/google";
 import "@/app/styles/globals.css";
 import type { Metadata } from "next";
 import Header from "@/app/components/Header";
@@ -7,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import Footer from "../components/Footer";
 import NextTopLoader from "nextjs-toploader";
+import { CookieConsent } from "@/app/components/cookies";
 
 export const metadata: Metadata = {
   title: {
@@ -14,12 +14,6 @@ export const metadata: Metadata = {
     default: "Tamborine",
   },
 };
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default async function LocaleLayout({
   children,
@@ -35,15 +29,14 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale}>
-      <body className={`${spaceGrotesk.variable} antialiased`}>
-        <NextTopLoader color="#a7e97f" />
-        <NextIntlClientProvider>
-          <Header />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <>
+      <NextTopLoader color="#a7e97f" />
+      <NextIntlClientProvider>
+        <Header />
+        {children}
+        <Footer />
+        <CookieConsent />
+      </NextIntlClientProvider>
+    </>
   );
 }

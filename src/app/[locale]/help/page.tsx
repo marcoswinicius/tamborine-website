@@ -124,7 +124,7 @@ export default function HelpCenterPage() {
             </motion.div>
 
             <motion.h1 
-              className="text-4xl md:text-6xl lg:text-7xl font-bold title-gradient-hero mb-6"
+              className="text-4xl md:text-6xl lg:text-7xl  title-gradient-hero mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -174,7 +174,7 @@ export default function HelpCenterPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Categorias de <span className="no-gradient">Ajuda</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -219,7 +219,7 @@ export default function HelpCenterPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Ações <span className="no-gradient">Rápidas</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -259,7 +259,7 @@ export default function HelpCenterPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Perguntas <span className="no-gradient">Frequentes</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
@@ -333,7 +333,7 @@ export default function HelpCenterPage() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-5xl font-bold title-gradient-hero mb-6">
+            <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
               Ainda Precisa de <span className="no-gradient">Ajuda?</span>
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
