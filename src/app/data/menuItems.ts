@@ -1,4 +1,4 @@
-import { CircuitBoard, ArrowLeftRight, Webhook, CreditCard, Users, Rss, LifeBuoy } from 'lucide-react';
+import { CircuitBoard, ArrowLeftRight, Webhook, CreditCard, Users } from 'lucide-react';
 
 export interface SubMenuItem {
   id: string;
