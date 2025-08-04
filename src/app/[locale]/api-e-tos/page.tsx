@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Code, Database, Settings, Plug, Terminal, BookOpen, Layers, Monitor } from 'lucide-react';
+import { Code, Database, Settings, Plug, Terminal, BookOpen, Layers, Monitor, Link } from 'lucide-react';
 import BackgroundSquares from '@/app/components/ui/BackgroundSquares';
 import CTA from '@/app/components/CTA';
 
@@ -26,7 +26,7 @@ export default function ApiETosPage() {
     {
       icon: Plug,
       title: "Integração Simples",
-      description: "SDKs disponíveis em múltiplas linguagens para acelerar sua implementação."
+      description: "APIs REST padronizadas com documentação completa para integração direta em qualquer linguagem."
     },
     {
       icon: Terminal,
@@ -137,9 +137,10 @@ export default function ApiETosPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <button className="button px-8 py-4 text-lg font-medium">
+            <Link href="https://docs.tamborine.app/#section/Autenticacao" target='_blank' className="button px-8 py-4 text-lg font-medium">
               Documentação da API
-            </button>
+            </Link>
+
             <button className="px-8 py-4 text-lg font-medium border border-[var(--color-primary)] rounded-full text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-colors">
               Demo do TOS
             </button>
@@ -450,29 +451,30 @@ export default function ApiETosPage() {
                 <span className="text-white/60 ml-2 text-sm">Node.js Example</span>
               </div>
               <pre className="text-[var(--color-primary)] text-sm overflow-x-auto">
-{`const tamborine = require('@tamborine/sdk');
-
-const client = new tamborine.Client({
-  apiKey: 'your-api-key',
-  environment: 'sandbox'
-});
-
-// Criar transação
-const transaction = await client.transactions.create({
-  amount: 1000, // R$ 10,00
-  currency: 'BRL',
-  card: {
-    number: '4111111111111111',
-    expiryMonth: '12',
-    expiryYear: '2025',
-    cvv: '123'
+{`// Exemplo usando fetch API diretamente
+const response = await fetch('https://api.tamborine.com/v1/transactions', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer your-api-key'
   },
-  customer: {
-    name: 'João Silva',
-    email: 'joao@email.com'
-  }
+  body: JSON.stringify({
+    amount: 1000, // R$ 10,00
+    currency: 'BRL',
+    card: {
+      number: '4111111111111111',
+      expiryMonth: '12',
+      expiryYear: '2025',
+      cvv: '123'
+    },
+    customer: {
+      name: 'João Silva',
+      email: 'joao@email.com'
+    }
+  })
 });
 
+const transaction = await response.json();
 console.log('Transação criada:', transaction.id);`}
               </pre>
             </motion.div>

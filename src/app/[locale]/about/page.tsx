@@ -9,24 +9,24 @@ import CTA from '@/app/components/CTA';
 export default function About() {
   const milestones = [
     {
-      year: "2013",
-      title: "Fundação da Tamborine",
-      description: "Nascemos com o objetivo de transformar o setor de tecnologia financeira através de soluções inovadoras."
+      year: "2019",
+      title: "Fundação Tamborine",
+      description: "Iniciamos nossa trajetória com o propósito de inovar o setor financeiro."
     },
     {
-      year: "2015", 
-      title: "Tecnologia Sensorial",
-      description: "Lançamento de tecnologia sensorial revolucionária que aprimorou segurança e conveniência nas transações."
+      year: "2021",
+      title: "Contrato com bancos",
+      description: "Somos a processadora do maior banco de Minas Gerais."
     },
     {
-      year: "2020",
-      title: "Liderança no Mercado",
-      description: "Consolidação como empresa líder em soluções financeiras inovadoras e processamento de pagamentos."
+      year: "2023",
+      title: "Emissão de cartões",
+      description: "Criamos a belbank, nosso braço dedicado à emissão de cartões."
     },
     {
-      year: "2024",
-      title: "Expansão Global",
-      description: "Expansão dos serviços com alcance global e parcerias estratégicas internacionais."
+      year: "2025",
+      title: "Expansão",
+      description: "Abertura de escritório em São Paulo e início da atuação na América Latina (Uruguai)."
     }
   ];
 
@@ -53,28 +53,7 @@ export default function About() {
     }
   ];
 
-  const achievements = [
-    {
-      number: "4.410",
-      label: "Transações por segundo",
-      description: "Processamento de alta performance garantindo rapidez e eficiência"
-    },
-    {
-      number: "99,99%",
-      label: "Disponibilidade",
-      description: "Confiabilidade comprovada com nossos serviços sempre acessíveis"
-    },
-    {
-      number: "11+",
-      label: "Anos de experiência",
-      description: "Mais de uma década transformando o setor financeiro"
-    },
-    {
-      number: "500+",
-      label: "Clientes atendidos",
-      description: "Instituições financeiras que confiam em nossas soluções"
-    }
-  ];
+
 
   const products = [
     {
@@ -113,7 +92,7 @@ export default function About() {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <span className="bg-[var(--color-primary)] text-[var(--color-dark-green)] font-medium px-3 py-1 rounded-full text-xs">
-              Desde 2013
+              Desde 2019
             </span>
             <span className="text-white">Transformando o setor financeiro</span>
           </motion.div>
@@ -134,7 +113,7 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Somos uma empresa de tecnologia inovadora que revoluciona o setor financeiro através de 
-            soluções avançadas para emissão de cartões e processamento de pagamentos desde 2013.
+            soluções avançadas para emissão de cartões e processamento de pagamentos desde 2019.
           </motion.p>
         </motion.div>
       </section>
@@ -153,7 +132,7 @@ export default function About() {
                 Quem <span className="no-gradient">Somos</span>
               </h2>
               <p className="text-lg text-gradient-hero mb-6">
-                A Tamborine é uma empresa de tecnologia inovadora, fundada em 2013, com a missão de 
+                A Tamborine é uma empresa de tecnologia inovadora, fundada em 2019, com a missão de 
                 transformar o setor financeiro por meio de soluções avançadas para emissão de cartões 
                 e processamento de pagamentos.
               </p>
@@ -276,18 +255,20 @@ export default function About() {
             {milestones.map((milestone, index) => (
               <motion.div
                 key={index}
-                className="text-center"
+                className="text-center h-full"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-[var(--color-primary)]/20 rounded-2xl p-6 mb-4">
-                  <div className="text-3xl  text-[var(--color-primary)] mb-3">
-                    {milestone.year}
+                <div className="bg-[var(--color-primary)]/20 rounded-2xl p-6 mb-4 flex flex-col justify-between min-h-[220px] h-full">
+                  <div>
+                    <div className="text-3xl  text-[var(--color-primary)] mb-3">
+                      {milestone.year}
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-3">{milestone.title}</h3>
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-3">{milestone.title}</h3>
-                  <p className="text-white/80 text-sm">{milestone.description}</p>
+                  <p className="text-white/80 text-sm mt-2">{milestone.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -371,6 +352,7 @@ export default function About() {
       </section>
 
       {/* Achievements Section */}
+{/*       
       <section className="py-20 bg-horizontal">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
@@ -409,7 +391,9 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> 
+      
+      */}
 
       <CTA />
     </main>

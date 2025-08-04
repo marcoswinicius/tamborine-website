@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-import { Shield, Zap, Globe2, CreditCard, Smartphone, Banknote, Lock, } from 'lucide-react';
+import { Shield, Zap, Globe2, CreditCard, Smartphone, Lock } from 'lucide-react';
 import BackgroundSquares from '@/app/components/ui/BackgroundSquares';
 import CTA from '@/app/components/CTA';
+import Link from 'next/link';
 
 export default function GatewayDePagamentoPage() {
   const features = [
@@ -16,7 +16,7 @@ export default function GatewayDePagamentoPage() {
     {
       icon: Zap,
       title: "Processamento Instantâneo",
-      description: "Transações aprovadas em menos de 2 segundos com alta taxa de conversão e disponibilidade 24/7."
+      description: "Transações aprovadas em milésimo de segundos com disponibilidade 24/7."
     },
     {
       icon: Globe2,
@@ -26,11 +26,11 @@ export default function GatewayDePagamentoPage() {
     {
       icon: CreditCard,
       title: "Múltiplos Métodos",
-      description: "Cartões de crédito/débito, PIX, boleto, carteiras digitais e muito mais em uma única integração."
+      description: "Processe qualquer cartão em uma única integração."
     },
     {
       icon: Smartphone,
-      title: "Mobile Otimizado",
+      title: "Suporte a Wallets",
       description: "Interface responsiva e otimizada para dispositivos móveis garantindo melhor experiência do usuário."
     },
     {
@@ -40,69 +40,11 @@ export default function GatewayDePagamentoPage() {
     }
   ];
 
-  const paymentMethods = [
-    {
-      category: "Cartões",
-      methods: ["Visa", "Mastercard", "Elo", "American Express", "Hipercard", "Diners Club"],
-      icon: CreditCard
-    },
-    {
-      category: "Pagamento Instantâneo",
-      methods: ["PIX", "TED", "DOC"],
-      icon: Zap
-    },
-    {
-      category: "Carteiras Digitais",
-      methods: ["PayPal", "Apple Pay", "Google Pay", "Samsung Pay"],
-      icon: Smartphone
-    },
-    {
-      category: "Outros Métodos",
-      methods: ["Boleto Bancário", "Débito Online", "Crediário"],
-      icon: Banknote
-    }
-  ];
 
-  const benefits = [
-    {
-      title: "Aumento na Conversão",
-      description: "Melhore suas vendas com checkout otimizado e múltiplas opções de pagamento para seus clientes.",
-      metric: "Até 35% mais vendas"
-    },
-    {
-      title: "Redução de Abandono",
-      description: "Interface intuitiva e processo simplificado que reduz significativamente o abandono de carrinho.",
-      metric: "70% menos abandono"
-    },
-    {
-      title: "Aprovação Inteligente",
-      description: "Algoritmos avançados que maximizam a taxa de aprovação sem comprometer a segurança.",
-      metric: "96% de aprovação"
-    }
-  ];
 
-  const integrationSteps = [
-    {
-      step: "01",
-      title: "Configuração Inicial",
-      description: "Configure sua conta e personalize as opções de pagamento conforme seu negócio."
-    },
-    {
-      step: "02",
-      title: "Integração Técnica",
-      description: "Implemente nosso gateway usando nossa API REST ou SDKs disponíveis."
-    },
-    {
-      step: "03",
-      title: "Testes e Homologação",
-      description: "Execute testes completos em ambiente seguro antes de ir para produção."
-    },
-    {
-      step: "04",
-      title: "Go Live",
-      description: "Ative o gateway em produção e comece a receber pagamentos imediatamente."
-    }
-  ];
+
+
+
 
   return (
     <main>
@@ -152,17 +94,17 @@ export default function GatewayDePagamentoPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <button className="button px-8 py-4 text-lg font-medium">
-              Começar Agora
-            </button>
-            <button className="px-8 py-4 text-lg font-medium border border-[var(--color-primary)] rounded-full text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-colors">
-              Ver Demo Ao Vivo
-            </button>
+            <Link href='/contato'>
+              <button className="button px-8 py-4 text-lg font-medium">
+                Começar Agora
+              </button>
+            </Link>
           </motion.div>
         </motion.div>
       </section>
 
       {/* Features Section */}
+      
       <section className="py-20 bg-solutions">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
@@ -173,7 +115,7 @@ export default function GatewayDePagamentoPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-5xl  title-gradient-hero mb-6">
-              Recursos que <span className="no-gradient">Impulsionam</span> Vendas
+              Tecnologia de <span className="no-gradient">pagamento</span> que converte.
             </h2>
             <p className="text-lg text-gradient-hero max-w-3xl mx-auto">
               Nosso gateway oferece todos os recursos necessários para maximizar suas conversões 
@@ -203,6 +145,9 @@ export default function GatewayDePagamentoPage() {
       </section>
 
       {/* Payment Methods Section */}
+
+      {/* 
+      
       <section className="py-20 bg-horizontal">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
@@ -246,9 +191,14 @@ export default function GatewayDePagamentoPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> 
+      
+      */}
 
       {/* Gateway Visualization Section */}
+
+      {/* 
+      
       <section className="py-20 bg-solutions">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -319,9 +269,12 @@ export default function GatewayDePagamentoPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> 
+      
+      */}
 
       {/* Benefits Section */}
+      {/* 
       <section className="py-20 bg-horizontal">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
@@ -362,8 +315,12 @@ export default function GatewayDePagamentoPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Integration Process Section */}
+
+    
+      {/* 
       <section className="py-20 bg-solutions">
         <div className="container mx-auto px-4 md:px-6">
           <motion.div 
@@ -402,7 +359,8 @@ export default function GatewayDePagamentoPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> 
+      */}
 
       {/* Stats Section */}
       <section className="py-20 bg-horizontal">
@@ -421,7 +379,7 @@ export default function GatewayDePagamentoPage() {
 
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { number: "2s", label: "Tempo de aprovação" },
+              { number: "0,5ms", label: "Tempo de aprovação" },
               { number: "99.9%", label: "Uptime garantido" },
               { number: "150+", label: "Moedas suportadas" },
               { number: "24/7", label: "Suporte técnico" }

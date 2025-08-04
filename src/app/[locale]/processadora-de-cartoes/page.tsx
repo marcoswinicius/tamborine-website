@@ -185,7 +185,7 @@ export default function ProcessadoraDeCartoesPage() {
                 viewport={{ once: true }}
               >
                 <div className="bg-[var(--color-primary)]/20 rounded-2xl p-8 mb-6">
-                  <div className="text-3xl  text-[var(--color-primary)] mb-2">
+                  <div className="text-3xl text-[var(--color-primary)] mb-2">
                     {benefit.metric}
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
@@ -284,12 +284,11 @@ export default function ProcessadoraDeCartoesPage() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               { number: "1M+", label: t('stats.items.transactions') },
               { number: "99.99%", label: t('stats.items.uptime') },
               { number: "150ms", label: t('stats.items.responseTime') },
-              { number: "500+", label: t('stats.items.companies') }
             ].map((stat, index) => (
               <motion.div
                 key={index}

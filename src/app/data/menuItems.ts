@@ -76,30 +76,6 @@ export const menuItems: MenuItem[] = [
         descriptionKey: "resources.items.aboutUs.description",
         icon: Users
       },
-      {
-        id: "resource-2",
-        titleKey: "resources.items.blog.title",
-        href: "/blog",
-        descriptionKey: "resources.items.blog.description",
-        icon: Rss
-      },
-      {
-        id: "resource-3",
-        titleKey: "resources.items.helpCenter.title",
-        href: "/help",
-        descriptionKey: "resources.items.helpCenter.description",
-        icon: LifeBuoy
-      }
     ]
   },
-  {
-    id: "blog",
-    titleKey: "blog.title",
-    href: "/blog"
-  },
-  {
-    id: "help",
-    titleKey: "help.title",
-    href: "/help"
-  }
 ];

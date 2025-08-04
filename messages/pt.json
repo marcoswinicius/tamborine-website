@@ -5,7 +5,7 @@
       "items": {
         "cardProcessor": {
           "title": "Processadora de Cartões",
-          "description": "Soluções tecnológicas de pagamento"
+          "description": "Soluções completas para cartão de crédito"
         },
         "paymentGateway": {
           "title": "Gateway de Pagamento",
@@ -116,7 +116,7 @@
     "items": {
       "cardProcessor": {
         "title": "Processadora de Cartões",
-        "description": "Soluções tecnológicas de pagamento"
+        "description": "Soluções completas para cartão de crédito"
       },
       "paymentGateway": {
         "title": "Gateway de Pagamento",
@@ -291,7 +291,7 @@
     "newsletterButton": "Assinar",
     "privacyPolicy": "Política de Privacidade",
     "terms": "Termos e Condições",
-    "copyright": "Tamborine App, LLC. Todos os direitos reservados."
+    "copyright": "Tamborine Tecnologia, LLC. Todos os direitos reservados."
   },
   "notFound": {
     "title": "Página Não Encontrada",
@@ -409,7 +409,7 @@
         "description": "Tecnologia de ponta para pagamentos"
       },
       "title": "Processadora de Cartões de Alta Performance",
-      "subtitle": "Processe pagamentos com cartões de crédito e débito utilizando a tecnologia mais avançada do mercado. Segurança máxima, velocidade incomparável e confiabilidade comprovada.",
+      "subtitle": "Processe pagamento com cartões de crédito, débito, múltiplo, consignado, pré pago, benefícios, conveniência utilizando a tecnologia mais avançada do mercado. Segurança máxima, velocidade incomparável e confiabilidade comprovada.",
       "cta": "Falar com Especialista"
     },
     "features": {
@@ -452,14 +452,14 @@
           "metric": "Até 80% de economia"
         },
         "conversion": {
-          "title": "Aumento da Conversão",
-          "description": "Melhore a taxa de aprovação de transações com nosso sistema inteligente de roteamento e análise de risco.",
-          "metric": "Até 99% de aprovação"
+          "title": "Aumente sua captação",
+          "description": "Com nossa infraestrutura em nuvem e sistema inteligente de roteamento, otimizando taxas e processamento em tempo real.",
+          "metric": "99,99% de disponibilidade"
         },
         "integration": {
           "title": "Integração Rápida",
           "description": "APIs bem documentadas e SDKs prontos para uso em principais linguagens de programação.",
-          "metric": "Integração e simulador disponível em 24 horas."
+          "metric": "Integração Self Service"
         }
       }
     },

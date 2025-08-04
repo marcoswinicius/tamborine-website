@@ -146,7 +146,7 @@ const Solutions = () => {
             Descubra a plataforma mais moderna e escalável para serviços financeiros. <br /><br />Tamborine: agilidade e personalização em soluções de pagamento
           </p>
           <Link href={"/contact"}>
-            <span className='underline'>Começar — it’s free</span>
+            <span className='underline'>Quero descobrir mais</span>
           </Link>
         </div>
         <div className="flex flex-col divide-y divide-white/10">

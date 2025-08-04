@@ -111,12 +111,12 @@ const HorizontalCards: React.FC<HorizontalCardsProps> = ({
   // Dados internos dos cards
   const defaultCards: CardProps[] = [
     {
-      title: "Acompanhe gastos da equipe",
-      description: "Veja em que sua equipe mais gasta e otimize os recursos da empresa com relatórios detalhados e analytics em tempo real.",
+      title: "Máxima gestão de dados",
+      description: "Acompanhe todos os dados de transações e autorizações em tempo real pelo TOS",
       children: <TeamExpanses />
     },
     {
-      title: "Um cartão para todas necessidades",
+      title: "Emita seu cartão de forma rápida e escalável",
       description: "Obtenha versões virtuais e físicas com personalização completa, limites flexíveis e controle total de gastos.",
       children: <CreditCard />
     },

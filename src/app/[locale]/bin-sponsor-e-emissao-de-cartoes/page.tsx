@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { CreditCard, Shield, Zap, Settings, Globe, Users, Smartphone, Wallet } from 'lucide-react';
-import BackgroundSquares from '@/app/components/ui/BackgroundSquares';
 import CTA from '@/app/components/CTA';
 
 export default function BinSponsorEmissaoCartoesPage() {
@@ -124,7 +123,6 @@ export default function BinSponsorEmissaoCartoesPage() {
     <main>
       {/* Hero Section */}
       <section className="relative flex items-center justify-center w-full overflow-hidden bg-hero" style={{ height: 'calc(100vh - 88px)', maxHeight: '900px' }}>
-        <BackgroundSquares className='absolute inset-0 opacity-80' />
         <motion.div 
           className="container mx-auto px-4 md:px-6 flex flex-col items-center text-center relative z-10"
           initial={{ opacity: 0 }}
@@ -158,8 +156,7 @@ export default function BinSponsorEmissaoCartoesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Lance seu próprio programa de cartões com BIN certificado e emissão completa. 
-            Solução white-label para cartões de crédito, débito, pré-pagos e múltiplos com tecnologia de ponta.
+            Solução white label para cartões de crédito com tecnologia de ponta.
           </motion.p>
 
           <motion.div 
@@ -180,7 +177,8 @@ export default function BinSponsorEmissaoCartoesPage() {
 
       {/* Card Types Section */}
       <section className="py-20 bg-solutions">
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 relative">
+
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
@@ -201,12 +199,18 @@ export default function BinSponsorEmissaoCartoesPage() {
             {cardTypes.map((cardType, index) => (
               <motion.div
                 key={index}
-                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center"
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 text-center relative"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
+                {/* Selo EM BREVE nos 3 últimos cards */}
+                {index > 0 && (
+                  <div className="absolute right-4 top-4 z-10">
+                    <span className="bg-[var(--color-primary)] text-[var(--color-dark-green)] text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-[var(--color-primary)]/40">EM BREVE</span>
+                  </div>
+                )}
                 <div className="w-16 h-16 rounded-xl bg-[var(--color-primary)]/20 flex items-center justify-center mx-auto mb-4">
                   <cardType.icon className="w-8 h-8 text-[var(--color-primary)]" />
                 </div>
@@ -272,7 +276,7 @@ export default function BinSponsorEmissaoCartoesPage() {
               <div className="bg-gradient-to-br from-[var(--color-primary)]/20 to-transparent rounded-2xl p-8">
                 <div className="relative aspect-square max-w-md mx-auto">
                   <Image
-                    src="/icon/card.svg"
+                    src="/images/solutions/binSponsor.png"
                     alt="Cartão Tamborine"
                     fill
                     className="object-contain"
@@ -460,7 +464,7 @@ export default function BinSponsorEmissaoCartoesPage() {
               <div className="bg-gradient-to-br from-[var(--color-primary)]/20 to-transparent rounded-2xl p-8">
                 <div className="relative aspect-square max-w-md mx-auto">
                   <Image
-                    src="/icon/bin.svg"
+                    src="/images/solutions/paymentGateway.png"
                     alt="BIN Sponsor"
                     fill
                     className="object-contain"
@@ -487,12 +491,13 @@ export default function BinSponsorEmissaoCartoesPage() {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-5 gap-8">
             {[
               { number: "50M+", label: "Cartões emitidos" },
               { number: "99.8%", label: "Uptime da plataforma" },
               { number: "90 dias", label: "Time to market" },
-              { number: "24/7", label: "Suporte especializado" }
+              { number: "24/7", label: "Suporte especializado" },
+              { number: "+20", label: "BIN Sponsors emitidos" }
             ].map((stat, index) => (
               <motion.div
                 key={index}

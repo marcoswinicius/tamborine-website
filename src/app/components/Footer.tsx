@@ -1,4 +1,7 @@
 import Image from 'next/image';
+import InovabraLogo from './ui/Inovabra';
+import CuboLogo from './ui/Cubo';
+import CuboUruguayLogo from './ui/CuboUruguay';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { SocialIcon } from 'react-social-icons';
@@ -15,9 +18,22 @@ export default function Footer() {
               <Image src="/logo.svg" alt="Tamborine Logo" width={180} height={40} className="mb-4" />
             </Link>
             <div className="flex gap-6 mt-2">
-              <SocialIcon url="https://instagram.com" bgColor="#23343F" fgColor="#fff" style={{ height: 28, width: 28 }} />
-              <SocialIcon url="https://linkedin.com" bgColor="#23343F" fgColor="#fff" style={{ height: 28, width: 28 }} />
-              <SocialIcon url="https://facebook.com" bgColor="#23343F" fgColor="#fff" style={{ height: 28, width: 28 }} />
+              
+              <SocialIcon url="https://www.linkedin.com/company/tamborine/?" bgColor="#23343F" fgColor="#fff" style={{ height: 28+10, width: 28+10 }} />
+              
+            </div>
+
+            {/* Parceiros */}
+            <div className="flex flex-wrap items-center gap-4 mt-8">
+              <div className="flex items-center justify-center bg-white/5 rounded p-2" style={{height:84, width:180}}>
+                <InovabraLogo style={{height:'50px', width:'125px', maxWidth:'100%', maxHeight:'50px'}} />
+              </div>
+              <div className="flex items-center justify-center bg-white/5 rounded p-2" style={{height:84, width:180}}>
+                <CuboLogo style={{height:'70px', width:'170px', maxWidth:'100%', maxHeight:'70px'}} />
+              </div>
+              <div className="flex items-center justify-center bg-white/5 rounded p-2" style={{height:84, width:180}}>
+                <CuboUruguayLogo style={{height:'50px', width:'125px', maxWidth:'100%', maxHeight:'50px'}} />
+              </div>
             </div>
           </div>
 
@@ -30,22 +46,6 @@ export default function Footer() {
                 <li><Link href="/products/product-2" className="hover:text-white">{t('footer.paymentGateway')}</Link></li>
                 <li><Link href="/products/product-3" className="hover:text-white">{t('footer.apis')}</Link></li>
                 <li><Link href="/products/product-3" className="hover:text-white">{t('footer.binSponsor')}</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">{t('footer.company')}</h4>
-              <ul className="space-y-2">
-                <li><Link href="/company" className="hover:text-white">{t('footer.companyPage')}</Link></li>
-                <li><Link href="/blog" className="hover:text-white">{t('footer.blog')}</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">{t('footer.resources')}</h4>
-              <ul className="space-y-2">
-                <li><Link href="/resources/resource-1" className="hover:text-white">{t('footer.aboutUs')}</Link></li>
-                <li><Link href="/resources/resource-2" className="hover:text-white">{t('footer.blog')}</Link></li>
-                <li><Link href="/resources/resource-3" className="hover:text-white">{t('footer.helpCenter')}</Link></li>
-                <li><Link href="/help" className="hover:text-white">{t('footer.help')}</Link></li>
               </ul>
             </div>
           </div>
@@ -75,9 +75,6 @@ export default function Footer() {
         {/* Legal & Copyright */}
         <div className="border-t border-[#2C3A45] mt-8 pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-xs text-[#B2C2C9] gap-4">
           <div className="flex gap-4">
-            <Link href="#" className="hover:text-white">{t('footer.privacyPolicy')}</Link>
-            <span>·</span>
-            <Link href="#" className="hover:text-white">{t('footer.terms')}</Link>
           </div>
           <div className="text-right">{t('footer.copyright')}</div>
         </div>
