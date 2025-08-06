@@ -9,6 +9,9 @@ import MobileMenu from "./MobileMenu";
 import Logo from "./ui/Logo";
 import { useTranslations } from "next-intl";
 import LanguageSwitcher from "./ui/LanguageSwitcher";
+import Cubo from "./ui/Cubo";
+import CuboUruguay from "./ui/CuboUruguay";
+import Inovabra from "./ui/Inovabra";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,7 +44,7 @@ export default function Header() {
                       {/* Invisible bridge to prevent gap between menu item and dropdown */}
                       <div className="absolute top-full left-0 w-full h-4 z-50" />
                       <div className="fixed left-0 right-0 top-full shadow-lg z-50 border-b-2 border-b-white bg-[var(--color-dark-green)] bg-opacity-90 backdrop-blur-sm opacity-0 invisible dropdown-group-hover:opacity-100 dropdown-group-hover:visible transition-all duration-200" style={{ top: '64px' }}>
-                        <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-y-2 md:gap-x-8 auto-rows-auto relative z-10">
+                        <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-y-2 md:gap-x-8 auto-rows-auto relative z-10">
                           {/* Information div on the right side */}
                           <div className="hidden lg:block lg:col-span-1 lg:col-start-4 lg:row-span-3 border-l border-solid pl-6 self-start" style={{ borderColor: 'var(--color-solid)' }}>
                             <h3 className="font-medium mb-3 text-primary">{statsT('title')}</h3>
@@ -62,6 +65,22 @@ export default function Header() {
                               height={200} 
                               className="mt-4"
                             />
+                          </div>
+
+                          {/* Partners section */}
+                          <div className="hidden lg:block lg:col-span-1 lg:col-start-5 lg:row-span-3 border-l border-solid pl-6 self-start" style={{ borderColor: 'var(--color-solid)' }}>
+                            <h3 className="font-medium mb-3 text-primary">Parceiros</h3>
+                            <div className='flex flex-col gap-4'>
+                              <div className="flex items-center justify-center bg-white/5 rounded p-2" style={{height:77, width:164}}>
+                                <Inovabra style={{height:'46px', width:'113px', maxWidth:'100%', maxHeight:'46px'}} />
+                              </div>
+                              <div className="flex items-center justify-center bg-white/5 rounded p-2" style={{height:77, width:164}}>
+                                <Cubo style={{height:'64px', width:'155px', maxWidth:'100%', maxHeight:'64px'}} />
+                              </div>
+                              <div className="flex items-center justify-center bg-white/5 rounded p-2" style={{height:77, width:164}}>
+                                <CuboUruguay style={{height:'46px', width:'113px', maxWidth:'100%', maxHeight:'46px'}} />
+                              </div>
+                            </div>
                           </div>
                           
                           {/* Menu items */}
