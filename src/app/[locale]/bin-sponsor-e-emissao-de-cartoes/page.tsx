@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { CreditCard, Shield, Zap, Settings, Globe, Users, Smartphone, Wallet } from 'lucide-react';
 import CTA from '@/app/components/CTA';
+import Link from 'next/link';
 
 export default function BinSponsorEmissaoCartoesPage() {
   const cardTypes = [
@@ -165,12 +166,9 @@ export default function BinSponsorEmissaoCartoesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <button className="button px-8 py-4 text-lg font-medium">
+            <Link href="/contato" className="button px-8 py-4 text-lg font-medium">
               Solicitar Proposta
-            </button>
-            <button className="px-8 py-4 text-lg font-medium border border-[var(--color-primary)] rounded-full text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 transition-colors">
-              Conhecer Soluções
-            </button>
+            </Link>
           </motion.div>
         </motion.div>
       </section>
